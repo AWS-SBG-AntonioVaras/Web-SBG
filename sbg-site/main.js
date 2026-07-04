@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const scrolled = window.scrollY;
                 shapes.forEach((shape) => {
                     const speed = parseFloat(shape.getAttribute('data-speed')) || 0.2;
-                    const yPos = Math.round(scrolled * speed);
-                    shape.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                    shape.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
                 });
                 isTicking = false;
             });

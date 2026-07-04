@@ -227,15 +227,6 @@ section {
   position: relative;
   display: inline-block;
 }
-.hero h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 8px;
-  background-color: var(--aws-orange);
-  z-index: -1;
-  transform: translateY(-10px);
-}
 
 .hero p {
   font-size: 1.3rem;

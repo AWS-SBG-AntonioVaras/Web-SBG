@@ -5,15 +5,22 @@ console.log("AWS SBG Console Initialized");
 document.addEventListener("DOMContentLoaded", () => {
     // Efecto Parallax para las capas geométricas (Shapes)
     const shapes = document.querySelectorAll('.bg-shape');
+    let isTicking = false;
     
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        
-        shapes.forEach((shape) => {
-            const speed = parseFloat(shape.getAttribute('data-speed')) || 0.2;
-            shape.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
+        if (!isTicking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                shapes.forEach((shape) => {
+                    const speed = parseFloat(shape.getAttribute('data-speed')) || 0.2;
+                    const yPos = Math.round(scrolled * speed);
+                    shape.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                });
+                isTicking = false;
+            });
+            isTicking = true;
+        }
+    }, { passive: true });
 
     // --- Efecto Terminal Typing ---
     const terminalSection = document.querySelector('#join');

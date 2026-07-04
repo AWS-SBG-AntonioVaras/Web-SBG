@@ -419,6 +419,7 @@ section {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 15px 15px 0px var(--aws-purple);
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -446,11 +447,19 @@ section {
   color: var(--aws-mint);
   font-size: 1.1rem;
   line-height: 1.7;
+  min-height: 520px; /* Evita que salte verticalmente durante la animación */
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-content {
+  flex-grow: 1; /* Empuja el botón hacia abajo manteniendo la estructura */
 }
 
 .terminal-body p {
   margin-bottom: 20px;
-  min-height: 1.7rem; /* Para que no salte el layout al escribir */
+  min-height: 1.7rem; /* Para que no salte el layout de cada línea al escribir */
+  width: 100%;
 }
 
 /* Cursor de Terminal Animado */

@@ -411,11 +411,11 @@ section {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 15px 15px 0px var(--aws-purple);
-  width: 100% !important;
-  max-width: 900px !important;
-  height: 480px !important;
-  min-height: 480px !important;
-  max-height: 480px !important;
+  width: 1000px !important;
+  max-width: 100% !important;
+  height: 600px !important;
+  min-height: 600px !important;
+  max-height: 600px !important;
   margin: 0 auto !important;
   overflow: hidden !important; 
   box-sizing: border-box !important;
@@ -447,19 +447,21 @@ section {
   color: var(--aws-mint);
   font-size: 1.1rem;
   line-height: 1.7;
-  height: 420px !important; /* 480 - 60 */
-  min-height: 420px !important;
-  max-height: 420px !important;
+  height: 540px !important; /* 600 - 60 */
+  min-height: 540px !important;
+  max-height: 540px !important;
   display: block !important; 
   box-sizing: border-box !important;
   width: 100% !important;
-  overflow: hidden !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
 }
 
 .terminal-content {
   width: 100% !important;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
+  word-break: break-word !important;
 }
 
 .terminal-body p {
@@ -468,18 +470,20 @@ section {
   width: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 
 @media (max-width: 768px) {
   .terminal-window {
-    height: 700px !important;
-    min-height: 700px !important;
-    max-height: 700px !important;
+    height: 850px !important;
+    min-height: 850px !important;
+    max-height: 850px !important;
   }
   .terminal-body {
-    height: 640px !important;
-    min-height: 640px !important;
-    max-height: 640px !important;
+    height: 790px !important;
+    min-height: 790px !important;
+    max-height: 790px !important;
   }
 }
 

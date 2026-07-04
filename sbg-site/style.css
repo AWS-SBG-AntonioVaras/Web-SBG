@@ -450,6 +450,20 @@ section {
 
 .terminal-body p {
   margin-bottom: 20px;
+  min-height: 1.7rem; /* Para que no salte el layout al escribir */
+}
+
+/* Cursor de Terminal Animado */
+.typing-cursor::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: var(--aws-mint);
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* --- Footer --- */

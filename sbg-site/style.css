@@ -438,19 +438,23 @@ section {
   color: var(--aws-mint);
   font-size: 1.1rem;
   line-height: 1.7;
-  min-height: 520px; /* Evita que salte verticalmente durante la animación */
+  height: 600px; /* Altura 100% rígida para evitar movimientos */
   display: flex;
   flex-direction: column;
 }
 
 .terminal-content {
-  flex-grow: 1; /* Empuja el botón hacia abajo manteniendo la estructura */
+  flex-grow: 1; /* Ocupa el espacio sin deformar la caja */
 }
 
 .terminal-body p {
   margin-bottom: 20px;
-  min-height: 1.7rem; /* Para que no salte el layout de cada línea al escribir */
-  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .terminal-body {
+    height: 800px; /* Más espacio en móvil por los saltos de línea */
+  }
 }
 
 /* Cursor de Terminal Animado */

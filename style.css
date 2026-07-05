@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: 'Amazon Ember Mono';
-  src: url('/assets/fonts/AmazonEmberMono_Rg.ttf') format('truetype');
+  src: url('./assets/fonts/AmazonEmberMono_Rg.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Amazon Ember Mono';
-  src: url('/assets/fonts/AmazonEmberMono_Bd.ttf') format('truetype');
+  src: url('./assets/fonts/AmazonEmberMono_Bd.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }

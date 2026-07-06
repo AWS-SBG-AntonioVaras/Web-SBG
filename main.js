@@ -57,23 +57,67 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Efecto Parallax para las capas geométricas (Shapes)
+    // Efecto Animación Infinita para las capas geométricas (Shapes)
     const shapes = document.querySelectorAll('.bg-shape');
-    let isTicking = false;
     
-    window.addEventListener('scroll', () => {
-        if (!isTicking) {
-            window.requestAnimationFrame(() => {
-                const scrolled = window.scrollY;
-                shapes.forEach((shape) => {
-                    const speed = parseFloat(shape.getAttribute('data-speed')) || 0.2;
-                    shape.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
-                });
-                isTicking = false;
-            });
-            isTicking = true;
-        }
-    }, { passive: true });
+    // Asignar posiciones y velocidades iniciales
+    const shapeData = Array.from(shapes).map(shape => {
+        const rect = shape.getBoundingClientRect();
+        const startX = rect.left + window.scrollX;
+        const startY = rect.top + window.scrollY;
+        
+        // Desvincular de su anclaje CSS original para controlar con transform desde (0,0)
+        shape.style.top = '0px';
+        shape.style.left = '0px';
+        shape.style.right = 'auto';
+        shape.style.bottom = 'auto';
+        
+        // Algunos horizontales, otros verticales
+        const isHorizontal = Math.random() > 0.5;
+        const dir = Math.random() > 0.5 ? 1 : -1;
+        const speed = (Math.random() * 1.5 + 0.3); 
+        
+        return {
+            el: shape,
+            x: startX,
+            y: startY,
+            vx: isHorizontal ? dir * speed : 0,
+            vy: !isHorizontal ? dir * speed : 0,
+            width: shape.offsetWidth,
+            height: shape.offsetHeight
+        };
+    });
+
+    function animateShapes() {
+        const docWidth = document.documentElement.scrollWidth;
+        const docHeight = document.documentElement.scrollHeight;
+        
+        shapeData.forEach(data => {
+            data.x += data.vx;
+            data.y += data.vy;
+            
+            // Envolver horizontalmente
+            if (data.vx > 0 && data.x > docWidth) {
+                data.x = -data.width;
+            } else if (data.vx < 0 && data.x + data.width < 0) {
+                data.x = docWidth;
+            }
+            
+            // Envolver verticalmente
+            if (data.vy > 0 && data.y > docHeight) {
+                data.y = -data.height;
+            } else if (data.vy < 0 && data.y + data.height < 0) {
+                data.y = docHeight;
+            }
+            
+            data.el.style.transform = `translate3d(${data.x}px, ${data.y}px, 0)`;
+        });
+        
+        requestAnimationFrame(animateShapes);
+    }
+    
+    // Iniciar el bucle de animación
+    requestAnimationFrame(animateShapes);
 
     // --- Efecto Terminal Typing ---
     

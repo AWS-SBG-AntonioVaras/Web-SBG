@@ -568,6 +568,55 @@ document.addEventListener('DOMContentLoaded', () => {
       resetAutoPlay();
     });
 
+    // --- Arrastrar con Mouse (Mouse Drag) y Soporte Táctil ---
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      carousel.style.cursor = 'grabbing';
+      carousel.style.scrollSnapType = 'none'; // Quitar snap al arrastrar para suavidad
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+      clearInterval(autoPlayInterval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      isDown = false;
+      carousel.style.cursor = 'grab';
+      carousel.style.scrollSnapType = 'x mandatory';
+    });
+
+    carousel.addEventListener('mouseup', () => {
+      isDown = false;
+      carousel.style.cursor = 'grab';
+      carousel.style.scrollSnapType = 'x mandatory';
+      resetAutoPlay();
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; // Multiplicador de velocidad
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch events
+    carousel.addEventListener('touchstart', () => {
+      clearInterval(autoPlayInterval);
+    }, {passive: true});
+
+    carousel.addEventListener('touchend', () => {
+      resetAutoPlay();
+    }, {passive: true});
+
+    carousel.parentElement.addEventListener('mouseleave', () => {
+      isHovered = false;
+      resetAutoPlay();
+    });
+
     // Touch events para móviles
     carousel.parentElement.addEventListener(
       'touchstart',

@@ -374,7 +374,7 @@ section {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   margin-bottom: 20px;
   color: var(--text-light);
   line-height: 1.1;
@@ -534,7 +534,7 @@ section {
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
   .hero p {
     font-size: 1rem;
@@ -568,7 +568,7 @@ section {
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
   .hero p {
     font-size: 0.85rem;

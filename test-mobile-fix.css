@@ -1,0 +1,109 @@
+/* --- Estilos base del Carrusel (Movidos del HTML) --- */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.leaders-section {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+  align-items: stretch; /* Permite que todas las tarjetas midan lo mismo de alto */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.leaders-section::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Ajuste de las Tarjetas --- */
+.leader-card-heroic {
+  flex: 0 0 calc(100% - 20px);
+  margin: 10px;
+  scroll-snap-align: center;
+  display: flex;
+  background-color: rgba(26, 34, 45, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 4px solid var(--border-color);
+  box-shadow: 10px 10px 0px var(--aws-orange);
+  transition: transform 0.3s;
+  height: auto; /* Se adaptará al contenido */
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 900px) {
+  /* Movemos los botones DEBAJO del carrusel y los centramos */
+  .carousel-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .leaders-section {
+    order: 1; /* El carrusel va primero arriba */
+    width: 100%;
+    padding-bottom: 10px; /* Reduce espacio debajo antes de los botones */
+  }
+
+  .carousel-btn {
+    display: flex !important; /* Restauramos los botones */
+    position: static !important; /* Quitamos absolutos si los había */
+    transform: none !important;
+  }
+
+  #prevLeaderBtn {
+    order: 2; /* Botón izquierdo abajo a la izquierda */
+    margin-right: 15px;
+  }
+
+  #nextLeaderBtn {
+    order: 3; /* Botón derecho abajo a la derecha */
+  }
+
+  /* Las tarjetas en columna */
+  .leader-card-heroic,
+  .leader-card-heroic.reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  /* Achicamos la imagen y la separamos del texto */
+  .leader-img-large {
+    width: 160px !important;
+    height: 160px !important;
+    margin: 30px auto 0 auto !important;
+    border-radius: 50% !important; /* Formato avatar circular es mucho más amigable en móvil */
+  }
+
+  .leader-info {
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los títulos */
+  }
+
+  .leader-info p {
+    text-align: left; /* El bloque de texto largo justificado a la izquierda para mejor lectura */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-card-heroic {
+    /* Efecto "Peek" (Asomo) para sugerir que hay más tarjetas al lado */
+    flex: 0 0 85% !important;
+    margin: 0 10px !important;
+  }
+}

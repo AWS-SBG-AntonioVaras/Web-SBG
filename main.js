@@ -153,6 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let terminalStarted = false;
 
   function getPromptHTML() {
+    if (window.innerWidth <= 768 || 'ontouchstart' in window) {
+      return `<span style="color: var(--aws-mint);">❯</span>`;
+    }
     const now = new Date();
     const timeString = now.toLocaleTimeString('es-CL', { hour12: false });
     return `<span style="color: var(--aws-orange);">(${timeString})</span> <span style="color: var(--aws-mint);">git:(Web-SBG:Main)</span><span style="color: white;">:</span>`;

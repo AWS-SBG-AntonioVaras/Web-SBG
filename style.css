@@ -743,6 +743,7 @@ section {
 }
 
 .modal-content h2 {
+  margin-top: 0;
   color: var(--aws-mint);
   font-size: 1.8rem;
   margin-bottom: 25px;

@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) {
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      const content = modal.querySelector('.modal-content');
+      if (content) content.scrollTop = 0;
     }
   }
 

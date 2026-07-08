@@ -374,7 +374,7 @@ section {
 }
 
 .hero h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   margin-bottom: 20px;
   color: var(--text-light);
   line-height: 1.1;
@@ -534,7 +534,7 @@ section {
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
   .hero p {
     font-size: 1rem;
@@ -568,7 +568,7 @@ section {
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
   .hero p {
     font-size: 0.85rem;
@@ -1313,3 +1313,167 @@ footer {
     margin-bottom: 15px !important;
   }
 }
+
+
+/* =========================================
+   FUNDAMENTAL REWRITE: TEAM CARDS
+   ========================================= */
+
+#leaders .container {
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.carousel-wrapper {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 10px !important;
+  box-sizing: border-box !important;
+}
+
+#leadersCarousel {
+  display: flex !important;
+  touch-action: pan-x pan-y !important;
+  -webkit-overflow-scrolling: touch !important;
+  flex-direction: row !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth !important;
+  gap: 20px !important;
+  padding: 20px 0 40px 0 !important;
+  width: 100% !important;
+  align-items: stretch !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+#leadersCarousel::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Fundamental Card Structure */
+.leader-card-heroic,
+.leader-card-heroic.reverse {
+  flex: 0 0 85% !important; /* Peeks the next card to invite swiping */
+  scroll-snap-stop: always !important;
+  display: flex !important;
+  flex-direction: column !important; /* IMAGEN ARRIBA, TEXTO MEDIO, BOTONES ABAJO */
+  background-color: rgba(26, 34, 45, 0.95) !important;
+  border: 4px solid var(--border-color) !important;
+  scroll-snap-align: center !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  padding: 0;
+}
+
+/* Image on top */
+.leader-card-heroic .leader-img-large,
+.leader-card-heroic.reverse .leader-img-large {
+  width: 100% !important;
+  height: 300px !important; /* Fija la altura para que no deforme la tarjeta */
+  margin: 0 !important;
+  border: none !important;
+  border-bottom: 4px solid var(--border-color) !important;
+  border-radius: 4px 4px 0 0 !important;
+  object-fit: cover;
+  box-sizing: border-box !important;
+}
+
+/* Text in the middle */
+.leader-card-heroic .leader-info {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 25px !important;
+  flex-grow: 1 !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+.leader-card-heroic .leader-info h3 {
+  font-size: 1.8rem !important;
+  margin-bottom: 5px !important;
+}
+
+.leader-card-heroic .leader-info .role {
+  font-size: 1rem !important;
+  margin-bottom: 15px !important;
+  color: var(--aws-magenta) !important;
+}
+
+.leader-card-heroic .leader-info p {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 20px !important;
+  text-align: justify !important;
+  text-align-last: center !important; /* Se ve ordenado */
+}
+
+/* Buttons at the bottom */
+.leader-socials {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: auto !important; /* Empuja los botones abajo */
+  width: 100% !important;
+}
+
+.leader-socials .neo-btn {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  padding: 10px 15px !important;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  display: none !important; /* Hide them on mobile by default to save space */
+}
+
+/* Desktop layout overriding to side-by-side if preferred, 
+   but user asked for image top, text middle, buttons bottom. 
+   Let's keep it column but make cards smaller on desktop so 2 or 3 fit. */
+
+@media (min-width: 768px) {
+  .carousel-btn {
+    display: flex !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    background: var(--aws-purple) !important;
+    color: white !important;
+  }
+  #prevLeaderBtn { left: -20px !important; }
+  #nextLeaderBtn { right: -20px !important; }
+
+  /* In Desktop, let's make the cards take 50% width */
+  .leader-card-heroic,
+  .leader-card-heroic.reverse {
+    flex: 0 0 calc(50% - 10px) !important;
+  }
+  
+  /* Keep Image top, text middle, buttons bottom */
+  .leader-card-heroic .leader-img-large,
+  .leader-card-heroic.reverse .leader-img-large {
+    height: 350px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* In Large Desktop, 3 cards */
+  .leader-card-heroic,
+  .leader-card-heroic.reverse {
+    flex: 0 0 calc(33.333% - 14px) !important;
+  }
+}
+
+/* Fix shadow colors using existing classes */
+.shadow-orange { box-shadow: 6px 6px 0px var(--aws-orange) !important; }
+.shadow-magenta { box-shadow: 6px 6px 0px var(--aws-magenta) !important; }
+.shadow-blue { box-shadow: 6px 6px 0px var(--aws-blue) !important; }
+.shadow-purple { box-shadow: 6px 6px 0px var(--aws-purple) !important; }
+.shadow-mint { box-shadow: 6px 6px 0px var(--aws-mint) !important; }

@@ -511,29 +511,77 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(terminalSection);
   }
 
-  // --- Carrusel de Equipo ---
+  // --- Carrusel de Equipo Infinito ---
   const carousel = document.getElementById('leadersCarousel');
   const prevBtn = document.getElementById('prevLeaderBtn');
   const nextBtn = document.getElementById('nextLeaderBtn');
 
   if (carousel && prevBtn && nextBtn) {
-    const moveToNext = () => {
-      const scrollAmount = carousel.clientWidth;
-      // Si estamos al final, volvemos al principio
-      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    const cards = Array.from(carousel.children);
+    const totalOriginalCards = cards.length;
+    
+    // Clonamos TODAS las tarjetas al principio y al final para asegurar el scroll infinito visual
+    cards.forEach(card => {
+      const cloneEnd = card.cloneNode(true);
+      carousel.appendChild(cloneEnd);
+    });
+    
+    // Para clonar al principio invertimos el array y hacemos prepend
+    [...cards].reverse().forEach(card => {
+      const cloneStart = card.cloneNode(true);
+      carousel.prepend(cloneStart);
+    });
+
+    let cardWidth = 0;
+
+    // Función para reposicionar en silencio al usuario dentro de los elementos reales
+    const adjustScroll = () => {
+      if (cardWidth === 0) {
+        cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      }
+      
+      const scrollPos = carousel.scrollLeft;
+      const totalWidth = carousel.scrollWidth;
+      const cloneBlockWidth = cardWidth * totalOriginalCards;
+      
+      // Si scrolleamos hacia la izquierda y llegamos al bloque clonado inicial
+      if (scrollPos <= cardWidth * 0.5) {
+        carousel.style.scrollBehavior = 'auto'; // Deshabilitar transición suave
+        carousel.scrollLeft = scrollPos + cloneBlockWidth; // Saltar a los elementos reales
+        // Restaurar suave después de que el navegador aplique el salto
+        setTimeout(() => { carousel.style.scrollBehavior = 'smooth'; }, 50);
+      } 
+      // Si scrolleamos a la derecha y llegamos al bloque clonado final
+      else if (scrollPos >= totalWidth - cloneBlockWidth - (cardWidth * 0.5)) {
+        carousel.style.scrollBehavior = 'auto'; 
+        carousel.scrollLeft = scrollPos - cloneBlockWidth;
+        setTimeout(() => { carousel.style.scrollBehavior = 'smooth'; }, 50);
       }
     };
 
+    // Ajustar scroll inicial para empezar en el primer elemento original (que ahora está en el medio)
+    setTimeout(() => {
+      carousel.style.scrollBehavior = 'auto';
+      cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      carousel.scrollLeft = cardWidth * totalOriginalCards; 
+      setTimeout(() => { carousel.style.scrollBehavior = 'smooth'; }, 50);
+    }, 100);
+
+    // Escuchar cuando el usuario desliza
+    carousel.addEventListener('scroll', () => {
+      requestAnimationFrame(adjustScroll);
+    });
+
+    const moveToNext = () => {
+      cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      carousel.style.scrollBehavior = 'smooth';
+      carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    };
+
     const moveToPrev = () => {
-      const scrollAmount = carousel.clientWidth;
-      if (carousel.scrollLeft <= 10) {
-        carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      }
+      cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      carousel.style.scrollBehavior = 'smooth';
+      carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     };
 
     nextBtn.addEventListener('click', () => {
@@ -557,83 +605,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Pausar autoplay al hacer hover
+    // Pausar autoplay al hacer hover/touch
     carousel.parentElement.addEventListener('mouseenter', () => {
       isHovered = true;
       clearInterval(autoPlayInterval);
     });
-
     carousel.parentElement.addEventListener('mouseleave', () => {
       isHovered = false;
       resetAutoPlay();
     });
-
-    // --- Arrastrar con Mouse (Mouse Drag) y Soporte Táctil ---
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    carousel.addEventListener('mousedown', (e) => {
-      isDown = true;
-      carousel.style.cursor = 'grabbing';
-      carousel.style.scrollSnapType = 'none'; // Quitar snap al arrastrar para suavidad
-      startX = e.pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
+    carousel.parentElement.addEventListener('touchstart', () => {
+      isHovered = true;
       clearInterval(autoPlayInterval);
-    });
-
-    carousel.addEventListener('mouseleave', () => {
-      isDown = false;
-      carousel.style.cursor = 'grab';
-      carousel.style.scrollSnapType = 'x mandatory';
-    });
-
-    carousel.addEventListener('mouseup', () => {
-      isDown = false;
-      carousel.style.cursor = 'grab';
-      carousel.style.scrollSnapType = 'x mandatory';
-      resetAutoPlay();
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2; // Multiplicador de velocidad
-      carousel.scrollLeft = scrollLeft - walk;
-    });
-
-    // Touch events
-    carousel.addEventListener('touchstart', () => {
-      clearInterval(autoPlayInterval);
-    }, {passive: true});
-
-    carousel.addEventListener('touchend', () => {
-      resetAutoPlay();
-    }, {passive: true});
-
-    carousel.parentElement.addEventListener('mouseleave', () => {
+    }, { passive: true });
+    carousel.parentElement.addEventListener('touchend', () => {
       isHovered = false;
       resetAutoPlay();
-    });
-
-    // Touch events para móviles
-    carousel.parentElement.addEventListener(
-      'touchstart',
-      () => {
-        isHovered = true;
-        clearInterval(autoPlayInterval);
-      },
-      { passive: true }
-    );
-
-    carousel.parentElement.addEventListener(
-      'touchend',
-      () => {
-        isHovered = false;
-        resetAutoPlay();
-      },
-      { passive: true }
-    );
+    }, { passive: true });
   }
 });

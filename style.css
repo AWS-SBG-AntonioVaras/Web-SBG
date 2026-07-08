@@ -420,7 +420,7 @@ section {
 
 .leaders-section {
   display: flex;
-  overflow-x: hidden; /* Hide scrollbar for layout */
+  overflow-x: auto; /* Enable native swipe on mobile */
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   padding: 20px 0;
@@ -1237,5 +1237,79 @@ footer {
 @media (max-width: 480px) {
   #terminal-input::placeholder {
     font-size: 0.75rem;
+  }
+}
+
+/* =========================================
+   CAROUSEL MOBILE FIXES (Swipe & Buttons)
+   ========================================= */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    position: relative !important;
+    display: block !important; /* Remove flex so it doesn't squish */
+  }
+
+  .leaders-section {
+    overflow-x: auto !important; /* SUPER IMPORTANTE PARA DESLIZAR CON EL DEDO */
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch; /* Suavidad en iOS */
+    padding-bottom: 20px !important; /* Espacio para que no choque abajo */
+  }
+
+  .carousel-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    /* Hacerlos flotantes y semitransparentes para no tapar la tarjeta */
+    background: rgba(26, 34, 45, 0.9) !important;
+    border: 1px solid var(--aws-purple) !important;
+    width: 40px !important;
+    height: 40px !important;
+    opacity: 0.8;
+  }
+
+  #prevLeaderBtn {
+    left: -10px !important; /* Salido ligeramente del borde */
+  }
+
+  #nextLeaderBtn {
+    right: -10px !important;
+  }
+
+  /* Hacer que la tarjeta ocupe el 100% real ahora que los botones no la aplastan */
+  .leader-card-heroic {
+    flex: 0 0 100% !important;
+    margin: 0 10px 0 0 !important; /* Solo margen derecho para separación */
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-card-heroic {
+    /* UX Pro-Tip: Que la tarjeta ocupe el 85% deja asomar la siguiente, invitando a deslizar */
+    flex: 0 0 85% !important;
+    margin: 0 10px !important;
+    scroll-snap-align: center !important;
+  }
+
+  .carousel-btn {
+    display: none !important; /* En móviles pequeños es mejor 100% swipe natural */
+  }
+
+  .leaders-section {
+    padding: 10px 0 30px 0 !important; /* Espacio para la sombra */
+  }
+
+  /* Ajuste de texto para que no sea un bloque enorme */
+  .leader-info p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    text-align: left !important; /* El centro hace que textos largos sean difíciles de leer */
+  }
+
+  .leader-info .role {
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
   }
 }

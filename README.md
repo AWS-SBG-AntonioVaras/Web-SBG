@@ -15,17 +15,20 @@ Bienvenido al repositorio oficial del **AWS Student Builder Group - Antonio Vara
 ## 🚀 Instalación y Desarrollo
 
 1. **Clonar el repositorio:**
+
    ```bash
    git clone https://github.com/AWS-SBG-AntonioVaras/Web-SBG.git
    cd Web-SBG
    ```
 
 2. **Instalar las dependencias:**
+
    ```bash
    npm install
    ```
 
 3. **Iniciar el servidor de desarrollo:**
+
    ```bash
    npm run dev
    ```
@@ -53,6 +56,13 @@ Bienvenido al repositorio oficial del **AWS Student Builder Group - Antonio Vara
 
 Asegúrate también de revisar nuestro [Código de Conducta](./CODE_OF_CONDUCT.md).
 
-## 📄 Licencia
+## 📄 Licencias y Legal
 
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](./LICENSE) para más detalles.
+Este proyecto utiliza un modelo de licenciamiento dual para adaptarse a nuestra naturaleza comunitaria y educativa:
+
+- **Código Fuente**: Distribuido bajo la [Licencia MIT](./LICENSE) - libre para uso, modificación y distribución.
+- **Contenido Educativo y Documentación**: Distribuido bajo la licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+### 🤖 Uso de Inteligencia Artificial
+
+En el espíritu de la innovación, declaramos que parte del código fuente, assets visuales y documentación presentados en este proyecto han sido generados, optimizados o asistidos por herramientas de Inteligencia Artificial (IA) generativa. Estos elementos se utilizan de forma transparente con fines educativos, experimentales y para agilizar el desarrollo de la comunidad.

@@ -1,68 +1,56 @@
-# AWS Student Builder Group - Chile 🚀
+<div align="center">
+  <h1>AWS Student Builder Group - Chile</h1>
+  <p>Sitio web principal de la comunidad AWS SBG Antonio Varas.</p>
 
-Bienvenido al repositorio oficial del **AWS Student Builder Group - Antonio Varas (Chile)**. Este proyecto contiene el sitio web principal de la comunidad, diseñado para conectar a los estudiantes, compartir eventos y construir sobre Amazon Web Services.
+  <a href="https://github.com/AWS-SBG-AntonioVaras/Web-SBG/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/AWS-SBG-AntonioVaras/Web-SBG/ci.yml?style=for-the-badge" alt="CI Status">
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License: MIT">
+  </a>
+  <a href="./CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge" alt="PRs Welcome">
+  </a>
+</div>
 
-![CI](https://github.com/AWS-SBG-AntonioVaras/Web-SBG/actions/workflows/ci.yml/badge.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+<br>
 
-## 🛠️ Tecnologías
+## Stack Tecnológico
 
-- **Vanilla JavaScript** (ES Modules)
-- **Vite** (Build tool y servidor de desarrollo)
-- **CSS3** nativo (con un estilo Cyberpunk / Neo-brutalism)
-- **ESLint & Prettier** para el formateo de código
+- Vanilla JavaScript (ES Modules), CSS3, Vite.
+- Herramientas: ESLint & Prettier.
 
-## 🚀 Instalación y Desarrollo
+## Instalación y Desarrollo
 
-1. **Clonar el repositorio:**
-
-   ```bash
-   git clone https://github.com/AWS-SBG-AntonioVaras/Web-SBG.git
-   cd Web-SBG
-   ```
-
-2. **Instalar las dependencias:**
-
-   ```bash
-   npm install
-   ```
-
-3. **Iniciar el servidor de desarrollo:**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Compilar para producción:**
-   ```bash
-   npm run build
-   ```
-
-## 📂 Estructura del Proyecto
-
-```
-.
-├── src/           # Componentes o scripts auxiliares
-├── assets/        # Imágenes, íconos y fuentes
-├── index.html     # Página principal
-├── main.js        # Lógica principal de JavaScript
-├── style.css      # Hoja de estilos global
-└── package.json   # Dependencias y scripts
+```bash
+git clone https://github.com/AWS-SBG-AntonioVaras/Web-SBG.git
+cd Web-SBG
+npm install
+npm run dev   # Inicia el servidor local
+npm run build # Compila para producción
 ```
 
-## 🤝 Contribuciones
+## Estructura
 
-¡Las contribuciones son bienvenidas! Por favor lee nuestro [CONTRIBUTING.md](./CONTRIBUTING.md) para más detalles sobre cómo ayudar y cómo enviar Pull Requests.
+- `/src/` & `/assets/`: Scripts auxiliares, recursos, imágenes y fuentes.
+- `index.html`, `main.js`, `style.css`: Archivos principales de la aplicación.
 
-Asegúrate también de revisar nuestro [Código de Conducta](./CODE_OF_CONDUCT.md).
+## Contribuciones
 
-## 📄 Licencias y Legal
+Las mejoras de la comunidad son clave para este proyecto. Para revisar los pasos de instalación, estándares y cómo enviar un _Pull Request_, lee nuestra [Guía de Contribución](./CONTRIBUTING.md) y el [Código de Conducta](./CODE_OF_CONDUCT.md).
 
-Este proyecto utiliza un modelo de licenciamiento dual para adaptarse a nuestra naturaleza comunitaria y educativa:
+## Legal e Inteligencia Artificial
 
-- **Código Fuente**: Distribuido bajo la [Licencia MIT](./LICENSE) - libre para uso, modificación y distribución.
-- **Contenido Educativo y Documentación**: Distribuido bajo la licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+- **Código Fuente**: [Licencia MIT](./LICENSE).
+- **Recursos Educativos**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- Parte del código, assets y textos han sido asistidos por Inteligencia Artificial generativa con fines experimentales y de agilización.
 
-### 🤖 Uso de Inteligencia Artificial
+---
 
-En el espíritu de la innovación, declaramos que parte del código fuente, assets visuales y documentación presentados en este proyecto han sido generados, optimizados o asistidos por herramientas de Inteligencia Artificial (IA) generativa. Estos elementos se utilizan de forma transparente con fines educativos, experimentales y para agilizar el desarrollo de la comunidad.
+## Contribuidores
+
+Agradecemos a todas las personas que ayudan a mantener este proyecto:
+
+<a href="https://github.com/AWS-SBG-AntonioVaras/Web-SBG/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AWS-SBG-AntonioVaras/Web-SBG" alt="Gráfico de contribuidores" />
+</a>

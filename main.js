@@ -124,9 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Window Control Buttons ---
   const btnClose = document.getElementById('btn-close-terminal');
   const errorScreen = document.getElementById('terminal-error-screen');
-  const terminalTitle = document.querySelector('.terminal-body h2');
-  const terminalContent = document.querySelector('.terminal-content');
-  const terminalBody = document.querySelector('.terminal-body');
   const reopenBtn = document.getElementById('reopen-terminal-btn');
 
   if (btnClose && errorScreen) {
@@ -407,8 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const baseCmd = cmdParts[0].toLowerCase();
             const args = cmdParts.slice(1);
 
-            let output = '';
-
             if (baseCmd === 'clear') {
               terminalHistory.innerHTML = '';
               document
@@ -421,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
               }
               return;
             } else {
+              let output;
               if (commands[baseCmd]) {
                 output = commands[baseCmd](args);
               } else {

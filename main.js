@@ -530,14 +530,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Autoplay
         let autoPlayInterval = setInterval(moveToNext, 4000);
+        let isHovered = false;
 
         const resetAutoPlay = () => {
             clearInterval(autoPlayInterval);
-            autoPlayInterval = setInterval(moveToNext, 4000);
+            if (!isHovered) {
+                autoPlayInterval = setInterval(moveToNext, 4000);
+            }
         };
 
         // Pausar autoplay al hacer hover
-        carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-        carousel.addEventListener('mouseleave', resetAutoPlay);
+        carousel.parentElement.addEventListener('mouseenter', () => {
+            isHovered = true;
+            clearInterval(autoPlayInterval);
+        });
+        
+        carousel.parentElement.addEventListener('mouseleave', () => {
+            isHovered = false;
+            resetAutoPlay();
+        });
+        
+        // Touch events para móviles
+        carousel.parentElement.addEventListener('touchstart', () => {
+            isHovered = true;
+            clearInterval(autoPlayInterval);
+        }, {passive: true});
+        
+        carousel.parentElement.addEventListener('touchend', () => {
+            isHovered = false;
+            resetAutoPlay();
+        }, {passive: true});
     }
 });

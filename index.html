@@ -1,395 +1,948 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AWS Student Builder Group - Chile</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Student Builder Group - Chile</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Tech Grid Background -->
+    <div class="tech-grid-bg"></div>
 
-  <!-- Tech Grid Background -->
-  <div class="tech-grid-bg"></div>
-
-  <!-- Parallax Decorative Shapes -->
-  <div class="parallax-shapes">
-    <div class="bg-shape shape-1" data-speed="0.2"></div>
-    <div class="bg-shape shape-2" data-speed="0.4"></div>
-    <div class="bg-shape shape-3" data-speed="0.15"></div>
-    <div class="bg-shape shape-4" data-speed="0.3"></div>
-    <div class="bg-shape shape-5" data-speed="0.5"></div>
-    <div class="bg-shape shape-6" data-speed="0.25"></div>
-    <div class="bg-shape shape-7" data-speed="0.1"></div>
-    <div class="bg-shape shape-8" data-speed="0.3"></div>
-    <div class="bg-shape shape-9" data-speed="0.2"></div>
-    <div class="bg-shape shape-10" data-speed="0.15"></div>
-    <div class="bg-shape shape-11" data-speed="0.35"></div>
-    <div class="bg-shape shape-12" data-speed="0.1"></div>
-    <div class="bg-shape shape-14" data-speed="0.2"></div>
-    <div class="bg-shape shape-15" data-speed="0.25"></div>
-    <div class="bg-shape shape-16" data-speed="0.4"></div>
-    <div class="bg-shape shape-17" data-speed="0.15"></div>
-    <div class="bg-shape shape-18" data-speed="0.25"></div>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero layer-section" style="z-index: 1;">
-    <div class="container" style="text-align: center;">
-      <img src="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg" alt="AWS SBG Logo" class="hero-banner">
-      <h1>AWS<br><span style="white-space: nowrap;">Student Builder Group</span><br>Antonio Varas</h1>
-      <p style="margin: 0 auto 40px auto; border-bottom: 4px solid var(--aws-blue); padding: 20px 60px; max-width: 800px; display: inline-block;">Bienvenid@ a nuestro espacio oficial de AWS en Antonio Varas, donde podras aprender y profundizar en la Nube con alumnos seleccionados de AWS.</p>
-      <br>
-      <a href="https://chat.whatsapp.com/EZbJ86mQNEhDEFB1HoELn8" target="_blank" class="neo-btn">
-        <svg width="24" height="24" viewBox="0 0 2580 3870" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2150 860H1720V1720H2580V2150H2150V2580H1720V3010H1290V3440H860V3870H430V3010H860V2150H0V1720H430V1290H860V860H1290V430H1720V0H2150V860Z" fill="#AD5CFF"/>
-        </svg>
-        UNIRSE A LA COMUNIDAD
-      </a>
+    <!-- Parallax Decorative Shapes -->
+    <div class="parallax-shapes">
+      <div class="bg-shape shape-1" data-speed="0.2"></div>
+      <div class="bg-shape shape-2" data-speed="0.4"></div>
+      <div class="bg-shape shape-3" data-speed="0.15"></div>
+      <div class="bg-shape shape-4" data-speed="0.3"></div>
+      <div class="bg-shape shape-5" data-speed="0.5"></div>
+      <div class="bg-shape shape-6" data-speed="0.25"></div>
+      <div class="bg-shape shape-7" data-speed="0.1"></div>
+      <div class="bg-shape shape-8" data-speed="0.3"></div>
+      <div class="bg-shape shape-9" data-speed="0.2"></div>
+      <div class="bg-shape shape-10" data-speed="0.15"></div>
+      <div class="bg-shape shape-11" data-speed="0.35"></div>
+      <div class="bg-shape shape-12" data-speed="0.1"></div>
+      <div class="bg-shape shape-14" data-speed="0.2"></div>
+      <div class="bg-shape shape-15" data-speed="0.25"></div>
+      <div class="bg-shape shape-16" data-speed="0.4"></div>
+      <div class="bg-shape shape-17" data-speed="0.15"></div>
+      <div class="bg-shape shape-18" data-speed="0.25"></div>
     </div>
-  </section>
 
-  <!-- LEADERS SECTION -->
-  <section id="leaders" class="layer-section solid-bg" style="z-index: 2;">
-    <div class="container">
-      <h2 class="pixel-font" style="font-size: 3rem; margin-bottom: 50px; color: var(--text-light); text-shadow: 4px 4px 0px var(--aws-purple);">Nuestro Equipo</h2>
-      
-      <div class="carousel-wrapper" style="position: relative; display: flex; align-items: center; gap: 10px;">
-        <button class="carousel-btn" id="prevLeaderBtn">&lt;</button>
-        
-        <div class="leaders-section" id="leadersCarousel" style="flex: 1; min-width: 0;">
-          <!-- Camila -->
-        <div class="leader-card-heroic shadow-orange">
-          <img src="./assets/images/camila.png" alt="Camila Aroca" class="leader-img-large" style="object-fit: cover;">
-          <div class="leader-info">
-            <h3>Camila Aroca</h3>
-            <span class="role">Student Builder Group Leader</span>
-            <p>Mi perfil se construye en la intersección de dos mundos que rara vez se encuentran: el razonamiento jurídico y el desarrollo tecnológico. Esa combinación me permite moverme con comodidad tanto en temas de gobernanza de datos, propiedad intelectual y marcos regulatorios, como en proyectos técnicos de IA y análisis de datos.</p>
-            <div>
-              <a href="https://www.linkedin.com/in/camila-aroca-675230238/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                LINKEDIN
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gladys -->
-        <div class="leader-card-heroic reverse shadow-magenta">
-          <img src="./assets/images/gladys.jpg" alt="Gladys Figueroa" class="leader-img-large" style="object-fit: cover;">
-          <div class="leader-info">
-            <h3>Gladys Figueroa</h3>
-            <span class="role">Coordinadora Interna</span>
-            <p>Me apasiona crear espacios donde las personas puedan desarrollar sus habilidades, conectar con nuevas oportunidades y potenciar sus intereses a través de proyectos, talleres y comunidades tecnológicas.</p>
-            <div>
-              <a href="https://www.linkedin.com/in/gladys-espinoza-figueroa-72484b293/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                LINKEDIN
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Axel -->
-        <div class="leader-card-heroic shadow-blue">
-          <img src="./assets/images/axel.png" alt="Axel Moraga" class="leader-img-large" style="object-fit: cover;">
-          <div class="leader-info">
-            <h3>Axel Moraga</h3>
-            <span class="role">Coordinador Externo</span>
-            <p>Me defino por la proactividad, el liderazgo y el amor a la cultura de codigo abierto, impulso el crecimiento tecnologico como organizador en Open-Source Santiago y colaboro como voluntario en DevOpsDays Chile, ademas de ser parte del staff de AWS SBG Antonio Varas.</p>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <a href="https://www.linkedin.com/in/axel-moraga/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                LINKEDIN
-              </a>
-              <a href="https://github.com/axel-damage/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                GITHUB
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Alonso -->
-        <div class="leader-card-heroic reverse shadow-purple">
-          <img src="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg" alt="Alonso Mieres" class="leader-img-large" style="object-fit: contain; padding: 40px; box-sizing: border-box;">
-          <div class="leader-info">
-            <h3>Alonso Mieres</h3>
-            <span class="role">Redes Sociales</span>
-            <p>Estudiante de Ingeniería en Infraestructura Tecnológica (Duoc UC), en proceso de titulación como Técnico. Me apasiona el diseño, gestión y automatización de infraestructuras. Mi enfoque principal está en metodologías DevOps, cultura Cloud y Ciberseguridad.</p>
-            <div>
-              <a href="https://www.linkedin.com/in/alonso-mieres-33b325365/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                LINKEDIN
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gaston -->
-        <div class="leader-card-heroic shadow-mint">
-          <img src="./assets/images/gaston.jpg" alt="Gaston Mardones" class="leader-img-large" style="object-fit: cover;">
-          <div class="leader-info">
-            <h3>Gaston Mardones</h3>
-            <span class="role">Infraestructura & Cloud</span>
-            <p>Estudiante de Ingeniería en Infraestructura Tecnológica con base en Electrónica. Me enfoco en la continuidad operacional, arquitecturas cloud y ciberseguridad para crear sistemas escalables. Experiencia en infraestructura crítica en Data Centers.</p>
-            <div style="margin-top: auto;">
-              <a href="https://www.linkedin.com/in/gaston-ignacio-mardones-gonzalez/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                LINKEDIN
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vicente -->
-        <div class="leader-card-heroic reverse shadow-orange">
-          <img src="./assets/images/vicente.jpg" alt="Vicente Montenegro" class="leader-img-large" style="object-fit: cover;">
-          <div class="leader-info">
-            <h3>Vicente Montenegro</h3>
-            <span class="role">Coordinador CITT</span>
-            <p>Estudiante de Informática especializado en Ciencia de Datos, combinando ingeniería de datos, backend y cloud. Participo activamente en el CITT y programas de innovación tecnológica en Duoc UC. Experiencia en robótica, desarrollo e impresión 3D.</p>
-            <div>
-              <a href="https://www.linkedin.com/in/vicente-montenegro-a71080278/" target="_blank" class="neo-btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                LINKEDIN
-              </a>
-            </div>
-          </div>
-        </div>
-        </div> <!-- Fin de leadersCarousel -->
-        
-        <button class="carousel-btn" id="nextLeaderBtn">&gt;</button>
-      </div> <!-- Fin de carousel-wrapper -->
-    </div> <!-- Fin de container -->
-  </section>
-
-  <!-- ACTIVITIES & SOCIALS SECTION -->
-  <section id="activities-socials" class="layer-section" style="z-index: 3;">
-    <div class="container split-section" style="max-width: 1500px;">
-      <!-- Proximos Eventos -->
-      <div class="tech-card shadow-mint">
-        <h2 class="pixel-font" style="color: var(--aws-mint); margin-bottom: 30px; text-align: center;">Próximos Eventos</h2>
-        
-        <div class="events-list">
-          <a href="#" class="activity-item" style="opacity: 0.5; cursor: not-allowed;">
-            <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start; gap: 10px;">
-              <strong style="color:var(--text-light); font-size: 1.1rem; line-height: 1.2;">[ SIN EVENTOS ACTIVOS ]</strong>
-              <span class="badge badge-cloud">General</span>
-            </div>
-            <span style="color:var(--aws-mint); font-size: 0.9rem;">Próximamente</span>
-            <span style="font-size: 0.9rem; color: #a1aab5;">El equipo está preparando nuevas actividades. Mantente alerta.</span>
-          </a>
-        </div>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero layer-section" style="z-index: 1">
+      <div class="container" style="text-align: center">
+        <img
+          src="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg"
+          alt="AWS SBG Logo"
+          class="hero-banner"
+        />
+        <h1>
+          AWS<br /><span style="white-space: nowrap">Student Builder Group</span><br />Antonio Varas
+        </h1>
+        <p
+          style="
+            margin: 0 auto 40px auto;
+            border-bottom: 4px solid var(--aws-blue);
+            padding: 20px 60px;
+            max-width: 800px;
+            display: inline-block;
+          "
+        >
+          Bienvenid@ a nuestro espacio oficial de AWS en Antonio Varas, donde podras aprender y
+          profundizar en la Nube con alumnos seleccionados de AWS.
+        </p>
+        <br />
+        <a href="https://chat.whatsapp.com/EZbJ86mQNEhDEFB1HoELn8" target="_blank" class="neo-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 2580 3870"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2150 860H1720V1720H2580V2150H2150V2580H1720V3010H1290V3440H860V3870H430V3010H860V2150H0V1720H430V1290H860V860H1290V430H1720V0H2150V860Z"
+              fill="#AD5CFF"
+            />
+          </svg>
+          UNIRSE A LA COMUNIDAD
+        </a>
       </div>
+    </section>
 
-      <!-- Eventos de otros SBG -->
-      <div class="tech-card shadow-blue">
-        <h2 class="pixel-font" style="color: var(--aws-blue); margin-bottom: 30px; text-align: center;">Otros Eventos SBG</h2>
-        
-        <div class="events-list">
-          <a href="https://www.meetup.com/aws-sbg-at-fcefyn-universidad-nacional-de-cordoba/events/315466282/" target="_blank" class="activity-item" style="border-left: 3px solid var(--aws-orange);">
-            <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start; gap: 10px; flex-wrap: wrap;">
-              <strong style="color:var(--text-light); font-size: 1.15rem; line-height: 1.3;">AWS SBG UNC: Agent Harness con Elizabeth Fuentes</strong>
-              <span class="badge badge-ai" style="background-color: rgba(255, 95, 86, 0.1); color: #ff5f56; border: 1px solid rgba(255, 95, 86, 0.3);">IA Generativa</span>
-            </div>
-            <span style="color:var(--aws-orange); font-size: 0.9rem; display: block; margin-top: 8px; font-weight: bold;">Lunes 13 de julio, 18:00 hs (ARG) · Virtual</span>
-            
-            <p style="font-size: 0.9rem; color: #a1aab5; margin-top: 12px; margin-bottom: 12px; line-height: 1.5;">
-              ¿Tu agente de IA inventa datos, elige la herramienta equivocada o quema tokens sin parar? El problema no es el prompt — es que le falta el <strong>harness</strong>.
-            </p>
-            
-            <div style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
-              <strong style="color: var(--aws-blue); margin-bottom: 5px; display: inline-block;">🧠 ¿Qué vas a aprender?</strong>
-              <ul style="margin: 0; padding-left: 15px; color: #a1aab5;">
-                <li style="margin-bottom: 4px;">Qué es el harness y por qué tu agente lo necesita</li>
-                <li style="margin-bottom: 4px;">Cómo aterrizar respuestas para que calcule en vez de adivinar</li>
-                <li style="margin-bottom: 4px;">Cómo filtrar herramientas y reducir el costo de tokens</li>
-                <li style="margin-bottom: 4px;">Cómo bloquear loops y hacer cumplir tus reglas</li>
-              </ul>
-            </div>
-            
-            <div style="display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--aws-mint); background: rgba(39, 201, 63, 0.05); padding: 10px; border-radius: 6px;">
-              <span>🎁 Repo con el código + créditos de AWS incluidos</span>
-              <span>🐍 Requisito: saber Python básico</span>
-              <span>💻 Virtual y gratuito</span>
-            </div>
-          </a></div>
-      </div>
-    </div> <!-- Cierra el split-section -->
+    <!-- LEADERS SECTION -->
+    <section id="leaders" class="layer-section solid-bg" style="z-index: 2">
+      <div class="container">
+        <h2
+          class="pixel-font"
+          style="
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: var(--text-light);
+            text-shadow: 4px 4px 0px var(--aws-purple);
+          "
+        >
+          Nuestro Equipo
+        </h2>
 
-    <!-- Socials (Fila completa debajo) -->
-    <div class="container" style="max-width: 1500px; margin-top: 40px;">
-      <div class="tech-card shadow-purple full-width">
-        <h2 class="pixel-font" style="color: var(--aws-purple); margin-bottom: 30px; text-align: center;">Redes</h2>
-        <div class="socials-grid horizontal">
-          <a href="https://www.meetup.com/aws-cloud-club-in-chile/" target="_blank" class="neo-btn btn-magenta">
-            <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6.98.555a.518.518 0 0 0-.105.011.53.53 0 1 0 .222 1.04.533.533 0 0 0 .409-.633.531.531 0 0 0-.526-.418zm6.455.638a.984.984 0 0 0-.514.143.99.99 0 1 0 1.02 1.699.99.99 0 0 0 .34-1.36.992.992 0 0 0-.846-.482zm-3.03 2.236a5.029 5.029 0 0 0-4.668 3.248 3.33 3.33 0 0 0-1.46.551 3.374 3.374 0 0 0-.94 4.562 3.634 3.634 0 0 0-.605 4.649 3.603 3.603 0 0 0 2.465 1.597c.018.732.238 1.466.686 2.114a3.9 3.9 0 0 0 5.423.992c.068-.047.12-.106.184-.157.987.881 2.47 1.026 3.607.24a2.91 2.91 0 0 0 1.162-1.69 4.238 4.238 0 0 0 2.584-.739 4.274 4.274 0 0 0 1.19-5.789 2.466 2.466 0 0 0 .433-3.308 2.448 2.448 0 0 0-1.316-.934 4.436 4.436 0 0 0-.776-2.873 4.467 4.467 0 0 0-5.195-1.656 5.106 5.106 0 0 0-2.773-.807zm-5.603.817a.759.759 0 0 0-.423.135.758.758 0 1 0 .863 1.248.757.757 0 0 0 .193-1.055.758.758 0 0 0-.633-.328zm15.994 2.37a.842.842 0 0 0-.47.151.845.845 0 1 0 1.175.215.845.845 0 0 0-.705-.365zm-8.15 1.028c.063 0 .124.005.182.014a.901.901 0 0 1 .45.187c.169.134.273.241.432.393.24.227.414.089.534.02.208-.122.369-.219.984-.208.633.011 1.363.237 1.514 1.317.168 1.199-1.966 4.289-1.817 5.722.106 1.01 1.815.299 1.96 1.22.186 1.198-2.136.753-2.667.493-.832-.408-1.337-1.34-1.12-2.26.16-.688 1.7-3.498 1.757-3.93.059-.44-.177-.476-.324-.484-.19-.01-.34.081-.526.362-.169.255-2.082 4.085-2.248 4.398-.296.56-.67.694-1.044.674-.548-.029-.798-.32-.72-.848.047-.31 1.26-3.049 1.323-3.476.039-.265-.013-.546-.275-.68-.263-.135-.572.07-.664.227-.128.215-1.848 4.706-2.032 5.038-.316.576-.65.76-1.152.784-1.186.056-2.065-.92-1.678-2.116.173-.532 1.316-4.571 1.895-5.599.389-.69 1.468-1.216 2.217-.892.387.167.925.437 1.084.507.366.163.759-.277.913-.412.155-.134.302-.276.49-.357.142-.06.343-.095.532-.094zm10.88 2.057a.468.468 0 0 0-.093.011.467.467 0 0 0-.36.555.47.47 0 0 0 .557.36.47.47 0 0 0 .36-.557.47.47 0 0 0-.464-.37zm-22.518.81a.997.997 0 0 0-.832.434 1 1 0 1 0 1.39-.258 1 1 0 0 0-.558-.176zm21.294 2.094a.635.635 0 0 0-.127.013.627.627 0 0 0-.48.746.628.628 0 0 0 .746.483.628.628 0 0 0 .482-.746.63.63 0 0 0-.621-.496zm-18.24 6.097a.453.453 0 0 0-.092.012.464.464 0 1 0 .195.908.464.464 0 0 0 .356-.553.465.465 0 0 0-.459-.367zm13.675 1.55a1.044 1.044 0 0 0-.583.187 1.047 1.047 0 1 0 1.456.265 1.044 1.044 0 0 0-.873-.451zM11.4 22.154a.643.643 0 0 0-.36.115.646.646 0 0 0-.164.899.646.646 0 0 0 .899.164.646.646 0 0 0 .164-.898.646.646 0 0 0-.54-.28z"/></svg>
-            MEETUP OFICIAL
-          </a>
-          <a href="https://www.linkedin.com/company/aws-sbg-duoc-avaras/about/" target="_blank" class="neo-btn btn-blue">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-            LINKEDIN COMUNIDAD
-          </a>
-          <a href="https://chat.whatsapp.com/EZbJ86mQNEhDEFB1HoELn8" target="_blank" class="neo-btn btn-mint">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            COMUNIDAD WHATSAPP
-          </a>
-          <a href="https://github.com/AWS-SBG-AntonioVaras" target="_blank" class="neo-btn btn-dark">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            REPOSITORIO GITHUB
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div
+          class="carousel-wrapper"
+          style="position: relative; display: flex; align-items: center; gap: 10px"
+        >
+          <button class="carousel-btn" id="prevLeaderBtn">&lt;</button>
 
-  <!-- ABOUT SBG & JOIN -->
-  <section id="join" class="layer-section solid-bg" style="z-index: 4;">
-    <div class="container">
-      <div class="terminal-window">
-        <div class="terminal-header">
-          <div class="terminal-dot dot-red" id="btn-close-terminal" style="cursor: pointer;"></div>
-        </div>
-        <div class="terminal-body">
-          <h2 class="pixel-font" style="margin-bottom: 10px; font-size: 2rem;">> Info_Sistema --sobre SBG</h2>
-          <div class="terminal-content">
-            <!-- El texto se inyectará aquí vía JS para la animación -->
-            <p class="typing-line" data-is-cmd="true" data-text="Info --ALL" style="display: flex; align-items: center; gap: 8px;"></p>
-            <p class="typing-line" data-text="AWS Student Builder Groups es un programa guiado por los estudiantes de universidades o institutos apoyados directamente por AWS con el objetivo de realizar eventos, proyectos innovadores, proveer recursos y prepararse para certificaciones." style="color: #a1aab5;"></p>
-            <p class="typing-line" data-text="Nuestro SBG tiene algo especial:" style="color: var(--aws-blue); font-weight: bold;"></p>
-            <p class="typing-line" data-text="• Primer Student Builder Group en el cono Sur" style="color: var(--aws-orange);"></p>
-            <p class="typing-line" data-text="• +660 Miembros en Meetup" style="color: var(--aws-orange);"></p>
-            <p class="typing-line" data-text="• +900 Seguidores en LinkedIn" style="color: var(--aws-orange);"></p>
-            <p class="typing-line" data-text=""></p>
-            <p class="typing-line" data-text="Beneficios de nuestro SBG:" style="color: var(--aws-blue); font-weight: bold;"></p>
-            <p class="typing-line" data-text="• Merch Oficial" style="color: var(--aws-orange);"></p>
-            <p class="typing-line" data-text="• Conexion con expertos de AWS" style="color: var(--aws-orange);"></p>
-            <p class="typing-line" data-text="• Oportunidades de Certificaciones" style="color: var(--aws-orange);"></p>
-            <p class="typing-line" data-text="• Muchos stickers!" style="color: var(--aws-orange);"></p>
-            
-            <div id="terminal-history"></div>
-            
-            <div id="terminal-interactive" style="display: none; align-items: center; margin-top: 15px;">
-              <span id="interactive-prompt" style="white-space: nowrap;"></span>
-              <div style="position: relative; flex: 1; display: flex; align-items: center;">
-                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" style="background: transparent; border: none; color: white; font-family: 'Space Mono', monospace; font-size: 0.9rem; width: 100%; outline: none; caret-color: transparent; margin-left: 8px;">
-                <div id="custom-cursor" class="custom-terminal-cursor blink"></div>
+          <div class="leaders-section" id="leadersCarousel" style="flex: 1; min-width: 0">
+            <!-- Camila -->
+            <div class="leader-card-heroic shadow-orange">
+              <img
+                src="./assets/images/camila.png"
+                alt="Camila Aroca"
+                class="leader-img-large"
+                style="object-fit: cover"
+              />
+              <div class="leader-info">
+                <h3>Camila Aroca</h3>
+                <span class="role">Student Builder Group Leader</span>
+                <p>
+                  Mi perfil se construye en la intersección de dos mundos que rara vez se
+                  encuentran: el razonamiento jurídico y el desarrollo tecnológico. Esa combinación
+                  me permite moverme con comodidad tanto en temas de gobernanza de datos, propiedad
+                  intelectual y marcos regulatorios, como en proyectos técnicos de IA y análisis de
+                  datos.
+                </p>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/camila-aroca-675230238/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                      />
+                    </svg>
+                    LINKEDIN
+                  </a>
+                </div>
               </div>
             </div>
+
+            <!-- Gladys -->
+            <div class="leader-card-heroic reverse shadow-magenta">
+              <img
+                src="./assets/images/gladys.jpg"
+                alt="Gladys Figueroa"
+                class="leader-img-large"
+                style="object-fit: cover"
+              />
+              <div class="leader-info">
+                <h3>Gladys Figueroa</h3>
+                <span class="role">Coordinadora Interna</span>
+                <p>
+                  Me apasiona crear espacios donde las personas puedan desarrollar sus habilidades,
+                  conectar con nuevas oportunidades y potenciar sus intereses a través de proyectos,
+                  talleres y comunidades tecnológicas.
+                </p>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/gladys-espinoza-figueroa-72484b293/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                      />
+                    </svg>
+                    LINKEDIN
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Axel -->
+            <div class="leader-card-heroic shadow-blue">
+              <img
+                src="./assets/images/axel.png"
+                alt="Axel Moraga"
+                class="leader-img-large"
+                style="object-fit: cover"
+              />
+              <div class="leader-info">
+                <h3>Axel Moraga</h3>
+                <span class="role">Coordinador Externo</span>
+                <p>
+                  Me defino por la proactividad, el liderazgo y el amor a la cultura de codigo
+                  abierto, impulso el crecimiento tecnologico como organizador en Open-Source
+                  Santiago y colaboro como voluntario en DevOpsDays Chile, ademas de ser parte del
+                  staff de AWS SBG Antonio Varas.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                  <a
+                    href="https://www.linkedin.com/in/axel-moraga/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                      />
+                    </svg>
+                    LINKEDIN
+                  </a>
+                  <a
+                    href="https://github.com/axel-damage/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                    GITHUB
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alonso -->
+            <div class="leader-card-heroic reverse shadow-purple">
+              <img
+                src="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg"
+                alt="Alonso Mieres"
+                class="leader-img-large"
+                style="object-fit: contain; padding: 40px; box-sizing: border-box"
+              />
+              <div class="leader-info">
+                <h3>Alonso Mieres</h3>
+                <span class="role">Redes Sociales</span>
+                <p>
+                  Estudiante de Ingeniería en Infraestructura Tecnológica (Duoc UC), en proceso de
+                  titulación como Técnico. Me apasiona el diseño, gestión y automatización de
+                  infraestructuras. Mi enfoque principal está en metodologías DevOps, cultura Cloud
+                  y Ciberseguridad.
+                </p>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/alonso-mieres-33b325365/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                      />
+                    </svg>
+                    LINKEDIN
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gaston -->
+            <div class="leader-card-heroic shadow-mint">
+              <img
+                src="./assets/images/gaston.jpg"
+                alt="Gaston Mardones"
+                class="leader-img-large"
+                style="object-fit: cover"
+              />
+              <div class="leader-info">
+                <h3>Gaston Mardones</h3>
+                <span class="role">Infraestructura & Cloud</span>
+                <p>
+                  Estudiante de Ingeniería en Infraestructura Tecnológica con base en Electrónica.
+                  Me enfoco en la continuidad operacional, arquitecturas cloud y ciberseguridad para
+                  crear sistemas escalables. Experiencia en infraestructura crítica en Data Centers.
+                </p>
+                <div style="margin-top: auto">
+                  <a
+                    href="https://www.linkedin.com/in/gaston-ignacio-mardones-gonzalez/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                      />
+                    </svg>
+                    LINKEDIN
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vicente -->
+            <div class="leader-card-heroic reverse shadow-orange">
+              <img
+                src="./assets/images/vicente.jpg"
+                alt="Vicente Montenegro"
+                class="leader-img-large"
+                style="object-fit: cover"
+              />
+              <div class="leader-info">
+                <h3>Vicente Montenegro</h3>
+                <span class="role">Coordinador CITT</span>
+                <p>
+                  Estudiante de Informática especializado en Ciencia de Datos, combinando ingeniería
+                  de datos, backend y cloud. Participo activamente en el CITT y programas de
+                  innovación tecnológica en Duoc UC. Experiencia en robótica, desarrollo e impresión
+                  3D.
+                </p>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/vicente-montenegro-a71080278/"
+                    target="_blank"
+                    class="neo-btn btn-dark"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                      />
+                    </svg>
+                    LINKEDIN
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de leadersCarousel -->
+
+          <button class="carousel-btn" id="nextLeaderBtn">&gt;</button>
+        </div>
+        <!-- Fin de carousel-wrapper -->
+      </div>
+      <!-- Fin de container -->
+    </section>
+
+    <!-- ACTIVITIES & SOCIALS SECTION -->
+    <section id="activities-socials" class="layer-section" style="z-index: 3">
+      <div class="container split-section" style="max-width: 1500px">
+        <!-- Proximos Eventos -->
+        <div class="tech-card shadow-mint">
+          <h2
+            class="pixel-font"
+            style="color: var(--aws-mint); margin-bottom: 30px; text-align: center"
+          >
+            Próximos Eventos
+          </h2>
+
+          <div class="events-list">
+            <a href="#" class="activity-item" style="opacity: 0.5; cursor: not-allowed">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  align-items: flex-start;
+                  gap: 10px;
+                "
+              >
+                <strong style="color: var(--text-light); font-size: 1.1rem; line-height: 1.2"
+                  >[ SIN EVENTOS ACTIVOS ]</strong
+                >
+                <span class="badge badge-cloud">General</span>
+              </div>
+              <span style="color: var(--aws-mint); font-size: 0.9rem">Próximamente</span>
+              <span style="font-size: 0.9rem; color: #a1aab5"
+                >El equipo está preparando nuevas actividades. Mantente alerta.</span
+              >
+            </a>
+          </div>
+        </div>
+
+        <!-- Eventos de otros SBG -->
+        <div class="tech-card shadow-blue">
+          <h2
+            class="pixel-font"
+            style="color: var(--aws-blue); margin-bottom: 30px; text-align: center"
+          >
+            Otros Eventos SBG
+          </h2>
+
+          <div class="events-list">
+            <a
+              href="https://www.meetup.com/aws-sbg-at-fcefyn-universidad-nacional-de-cordoba/events/315466282/"
+              target="_blank"
+              class="activity-item"
+              style="border-left: 3px solid var(--aws-orange)"
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  align-items: flex-start;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                "
+              >
+                <strong style="color: var(--text-light); font-size: 1.15rem; line-height: 1.3"
+                  >AWS SBG UNC: Agent Harness con Elizabeth Fuentes</strong
+                >
+                <span
+                  class="badge badge-ai"
+                  style="
+                    background-color: rgba(255, 95, 86, 0.1);
+                    color: #ff5f56;
+                    border: 1px solid rgba(255, 95, 86, 0.3);
+                  "
+                  >IA Generativa</span
+                >
+              </div>
+              <span
+                style="
+                  color: var(--aws-orange);
+                  font-size: 0.9rem;
+                  display: block;
+                  margin-top: 8px;
+                  font-weight: bold;
+                "
+                >Lunes 13 de julio, 18:00 hs (ARG) · Virtual</span
+              >
+
+              <p
+                style="
+                  font-size: 0.9rem;
+                  color: #a1aab5;
+                  margin-top: 12px;
+                  margin-bottom: 12px;
+                  line-height: 1.5;
+                "
+              >
+                ¿Tu agente de IA inventa datos, elige la herramienta equivocada o quema tokens sin
+                parar? El problema no es el prompt — es que le falta el <strong>harness</strong>.
+              </p>
+
+              <div style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px">
+                <strong style="color: var(--aws-blue); margin-bottom: 5px; display: inline-block"
+                  >🧠 ¿Qué vas a aprender?</strong
+                >
+                <ul style="margin: 0; padding-left: 15px; color: #a1aab5">
+                  <li style="margin-bottom: 4px">
+                    Qué es el harness y por qué tu agente lo necesita
+                  </li>
+                  <li style="margin-bottom: 4px">
+                    Cómo aterrizar respuestas para que calcule en vez de adivinar
+                  </li>
+                  <li style="margin-bottom: 4px">
+                    Cómo filtrar herramientas y reducir el costo de tokens
+                  </li>
+                  <li style="margin-bottom: 4px">Cómo bloquear loops y hacer cumplir tus reglas</li>
+                </ul>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 4px;
+                  font-size: 0.85rem;
+                  color: var(--aws-mint);
+                  background: rgba(39, 201, 63, 0.05);
+                  padding: 10px;
+                  border-radius: 6px;
+                "
+              >
+                <span>🎁 Repo con el código + créditos de AWS incluidos</span>
+                <span>🐍 Requisito: saber Python básico</span>
+                <span>💻 Virtual y gratuito</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
+      <!-- Cierra el split-section -->
+
+      <!-- Socials (Fila completa debajo) -->
+      <div class="container" style="max-width: 1500px; margin-top: 40px">
+        <div class="tech-card shadow-purple full-width">
+          <h2
+            class="pixel-font"
+            style="color: var(--aws-purple); margin-bottom: 30px; text-align: center"
+          >
+            Redes
+          </h2>
+          <div class="socials-grid horizontal">
+            <a
+              href="https://www.meetup.com/aws-cloud-club-in-chile/"
+              target="_blank"
+              class="neo-btn btn-magenta"
+            >
+              <svg
+                role="img"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.98.555a.518.518 0 0 0-.105.011.53.53 0 1 0 .222 1.04.533.533 0 0 0 .409-.633.531.531 0 0 0-.526-.418zm6.455.638a.984.984 0 0 0-.514.143.99.99 0 1 0 1.02 1.699.99.99 0 0 0 .34-1.36.992.992 0 0 0-.846-.482zm-3.03 2.236a5.029 5.029 0 0 0-4.668 3.248 3.33 3.33 0 0 0-1.46.551 3.374 3.374 0 0 0-.94 4.562 3.634 3.634 0 0 0-.605 4.649 3.603 3.603 0 0 0 2.465 1.597c.018.732.238 1.466.686 2.114a3.9 3.9 0 0 0 5.423.992c.068-.047.12-.106.184-.157.987.881 2.47 1.026 3.607.24a2.91 2.91 0 0 0 1.162-1.69 4.238 4.238 0 0 0 2.584-.739 4.274 4.274 0 0 0 1.19-5.789 2.466 2.466 0 0 0 .433-3.308 2.448 2.448 0 0 0-1.316-.934 4.436 4.436 0 0 0-.776-2.873 4.467 4.467 0 0 0-5.195-1.656 5.106 5.106 0 0 0-2.773-.807zm-5.603.817a.759.759 0 0 0-.423.135.758.758 0 1 0 .863 1.248.757.757 0 0 0 .193-1.055.758.758 0 0 0-.633-.328zm15.994 2.37a.842.842 0 0 0-.47.151.845.845 0 1 0 1.175.215.845.845 0 0 0-.705-.365zm-8.15 1.028c.063 0 .124.005.182.014a.901.901 0 0 1 .45.187c.169.134.273.241.432.393.24.227.414.089.534.02.208-.122.369-.219.984-.208.633.011 1.363.237 1.514 1.317.168 1.199-1.966 4.289-1.817 5.722.106 1.01 1.815.299 1.96 1.22.186 1.198-2.136.753-2.667.493-.832-.408-1.337-1.34-1.12-2.26.16-.688 1.7-3.498 1.757-3.93.059-.44-.177-.476-.324-.484-.19-.01-.34.081-.526.362-.169.255-2.082 4.085-2.248 4.398-.296.56-.67.694-1.044.674-.548-.029-.798-.32-.72-.848.047-.31 1.26-3.049 1.323-3.476.039-.265-.013-.546-.275-.68-.263-.135-.572.07-.664.227-.128.215-1.848 4.706-2.032 5.038-.316.576-.65.76-1.152.784-1.186.056-2.065-.92-1.678-2.116.173-.532 1.316-4.571 1.895-5.599.389-.69 1.468-1.216 2.217-.892.387.167.925.437 1.084.507.366.163.759-.277.913-.412.155-.134.302-.276.49-.357.142-.06.343-.095.532-.094zm10.88 2.057a.468.468 0 0 0-.093.011.467.467 0 0 0-.36.555.47.47 0 0 0 .557.36.47.47 0 0 0 .36-.557.47.47 0 0 0-.464-.37zm-22.518.81a.997.997 0 0 0-.832.434 1 1 0 1 0 1.39-.258 1 1 0 0 0-.558-.176zm21.294 2.094a.635.635 0 0 0-.127.013.627.627 0 0 0-.48.746.628.628 0 0 0 .746.483.628.628 0 0 0 .482-.746.63.63 0 0 0-.621-.496zm-18.24 6.097a.453.453 0 0 0-.092.012.464.464 0 1 0 .195.908.464.464 0 0 0 .356-.553.465.465 0 0 0-.459-.367zm13.675 1.55a1.044 1.044 0 0 0-.583.187 1.047 1.047 0 1 0 1.456.265 1.044 1.044 0 0 0-.873-.451zM11.4 22.154a.643.643 0 0 0-.36.115.646.646 0 0 0-.164.899.646.646 0 0 0 .899.164.646.646 0 0 0 .164-.898.646.646 0 0 0-.54-.28z"
+                />
+              </svg>
+              MEETUP OFICIAL
+            </a>
+            <a
+              href="https://www.linkedin.com/company/aws-sbg-duoc-avaras/about/"
+              target="_blank"
+              class="neo-btn btn-blue"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                />
+              </svg>
+              LINKEDIN COMUNIDAD
+            </a>
+            <a
+              href="https://chat.whatsapp.com/EZbJ86mQNEhDEFB1HoELn8"
+              target="_blank"
+              class="neo-btn btn-mint"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+              </svg>
+              COMUNIDAD WHATSAPP
+            </a>
+            <a
+              href="https://github.com/AWS-SBG-AntonioVaras"
+              target="_blank"
+              class="neo-btn btn-dark"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              REPOSITORIO GITHUB
+            </a>
+          </div>
+        </div>
       </div>
-    
-      <div id="terminal-error-screen" style="display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 540px; text-align: center; padding: 40px; border-radius: 10px; width: 100%;">
-        <img src="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg" width="120" alt="SBG Icon" style="margin-bottom: 30px;" />
-        <h2 style="font-size: 3.5rem; margin-bottom: 15px; color: #ff5f56; font-family: 'Space Mono', monospace;">ERROR 500</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 500px; line-height: 1.6; color: var(--text-light); font-family: 'Space Mono', monospace;">¡Lo sentimos! No es tu error, somos nosotros, por favor vuelve a intentar.</p>
-        <button id="reopen-terminal-btn" style="padding: 14px 28px; font-size: 1.1rem; font-weight: bold; background-color: var(--aws-orange); color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Space Mono', monospace; transition: transform 0.2s ease, opacity 0.2s ease;">Abrir otra terminal</button>
+    </section>
+
+    <!-- ABOUT SBG & JOIN -->
+    <section id="join" class="layer-section solid-bg" style="z-index: 4">
+      <div class="container">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dot dot-red" id="btn-close-terminal" style="cursor: pointer"></div>
+          </div>
+          <div class="terminal-body">
+            <h2 class="pixel-font" style="margin-bottom: 10px; font-size: 2rem">
+              > Info_Sistema --sobre SBG
+            </h2>
+            <div class="terminal-content">
+              <!-- El texto se inyectará aquí vía JS para la animación -->
+              <p
+                class="typing-line"
+                data-is-cmd="true"
+                data-text="Info --ALL"
+                style="display: flex; align-items: center; gap: 8px"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="AWS Student Builder Groups es un programa guiado por los estudiantes de universidades o institutos apoyados directamente por AWS con el objetivo de realizar eventos, proyectos innovadores, proveer recursos y prepararse para certificaciones."
+                style="color: #a1aab5"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="Nuestro SBG tiene algo especial:"
+                style="color: var(--aws-blue); font-weight: bold"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• Primer Student Builder Group en el cono Sur"
+                style="color: var(--aws-orange)"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• +660 Miembros en Meetup"
+                style="color: var(--aws-orange)"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• +900 Seguidores en LinkedIn"
+                style="color: var(--aws-orange)"
+              ></p>
+              <p class="typing-line" data-text=""></p>
+              <p
+                class="typing-line"
+                data-text="Beneficios de nuestro SBG:"
+                style="color: var(--aws-blue); font-weight: bold"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• Merch Oficial"
+                style="color: var(--aws-orange)"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• Conexion con expertos de AWS"
+                style="color: var(--aws-orange)"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• Oportunidades de Certificaciones"
+                style="color: var(--aws-orange)"
+              ></p>
+              <p
+                class="typing-line"
+                data-text="• Muchos stickers!"
+                style="color: var(--aws-orange)"
+              ></p>
+
+              <div id="terminal-history"></div>
+
+              <div
+                id="terminal-interactive"
+                style="display: none; align-items: center; margin-top: 15px"
+              >
+                <span id="interactive-prompt" style="white-space: nowrap"></span>
+                <div style="position: relative; flex: 1; display: flex; align-items: center">
+                  <input
+                    type="text"
+                    id="terminal-input"
+                    autocomplete="off"
+                    spellcheck="false"
+                    style="
+                      background: transparent;
+                      border: none;
+                      color: white;
+                      font-family: 'Space Mono', monospace;
+                      font-size: 0.9rem;
+                      width: 100%;
+                      outline: none;
+                      caret-color: transparent;
+                      margin-left: 8px;
+                    "
+                  />
+                  <div id="custom-cursor" class="custom-terminal-cursor blink"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="terminal-error-screen"
+          style="
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 540px;
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+          "
+        >
+          <img
+            src="./assets/icons/AWS Student Builder Group_RGB_Program Icon_White.svg"
+            width="120"
+            alt="SBG Icon"
+            style="margin-bottom: 30px"
+          />
+          <h2
+            style="
+              font-size: 3.5rem;
+              margin-bottom: 15px;
+              color: #ff5f56;
+              font-family: 'Space Mono', monospace;
+            "
+          >
+            ERROR 500
+          </h2>
+          <p
+            style="
+              font-size: 1.3rem;
+              margin-bottom: 40px;
+              max-width: 500px;
+              line-height: 1.6;
+              color: var(--text-light);
+              font-family: 'Space Mono', monospace;
+            "
+          >
+            ¡Lo sentimos! No es tu error, somos nosotros, por favor vuelve a intentar.
+          </p>
+          <button
+            id="reopen-terminal-btn"
+            style="
+              padding: 14px 28px;
+              font-size: 1.1rem;
+              font-weight: bold;
+              background-color: var(--aws-orange);
+              color: white;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              font-family: 'Space Mono', monospace;
+              transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
+            "
+          >
+            Abrir otra terminal
+          </button>
+        </div>
       </div>
+    </section>
 
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="#" data-modal="legal">Información Legal</a></li>
+          <li><a href="#" data-modal="privacy">Política de Privacidad</a></li>
+          <li><a href="#" data-modal="conduct">Código de Conducta</a></li>
+          <li>
+            <a href="https://github.com/AWS-SBG-AntonioVaras/Web-SBG" target="_blank"
+              >Repositorio GitHub</a
+            >
+          </li>
+          <li><a href="#" data-modal="contact">Contacto Interno</a></li>
+        </ul>
+        <p
+          style="
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.5;
+            font-family: 'Silkscreen', cursive;
+          "
+        >
+          © 2026 AWS SBG Antonio Varas - Chile.
+        </p>
+      </div>
+    </footer>
+
+    <!-- MODALS -->
+    <!-- Información Legal -->
+    <div class="modal-overlay" id="modal-legal">
+      <div class="modal-content">
+        <button class="modal-close" data-close="legal">&times;</button>
+        <h2>Información Legal</h2>
+        <p>
+          <strong>AWS Student Builder Group - Antonio Varas</strong> es un grupo de estudiantes
+          independiente, afiliado al programa AWS Student Builder Group de Amazon Web Services.
+        </p>
+        <h3>Propósito</h3>
+        <p>
+          Este sitio web y el grupo tienen fines educativos y comunitarios. No representan
+          oficialmente a Amazon Web Services ni a Duoc UC.
+        </p>
+        <h3>Uso del Contenido</h3>
+        <p>
+          El material presentado en este sitio, incluyendo código fuente, documentación y recursos
+          educativos, se comparte bajo principios de open source para fomentar el aprendizaje
+          colaborativo.
+        </p>
+        <h3>Exención de Responsabilidad</h3>
+        <p>
+          El grupo no se hace responsable por el uso indebido de la información aquí proporcionada.
+          Los miembros participan de forma voluntaria y bajo su propia responsabilidad.
+        </p>
+        <h3>Propiedad Intelectual</h3>
+        <p>
+          Las marcas y logotipos de AWS son propiedad de Amazon Web Services. El resto del contenido
+          original es propiedad del grupo a menos que se indique lo contrario.
+        </p>
+      </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <ul class="footer-links">
-        <li><a href="#" data-modal="legal">Información Legal</a></li>
-        <li><a href="#" data-modal="privacy">Política de Privacidad</a></li>
-        <li><a href="#" data-modal="conduct">Código de Conducta</a></li>
-        <li><a href="https://github.com/AWS-SBG-AntonioVaras/Web-SBG" target="_blank">Repositorio GitHub</a></li>
-        <li><a href="#" data-modal="contact">Contacto Interno</a></li>
-      </ul>
-      <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.5; font-family: 'Silkscreen', cursive;">© 2026 AWS SBG Antonio Varas - Chile.</p>
+    <!-- Política de Privacidad -->
+    <div class="modal-overlay" id="modal-privacy">
+      <div class="modal-content">
+        <button class="modal-close" data-close="privacy">&times;</button>
+        <h2>Política de Privacidad</h2>
+        <p>
+          En AWS Student Builder Group - Antonio Varas, valoramos tu privacidad y nos comprometemos
+          a proteger tus datos personales.
+        </p>
+        <h3>Información que Recopilamos</h3>
+        <p>
+          No recopilamos datos personales a través de este sitio web. La única información que
+          podemos conocer es aquella que compartes voluntariamente al unirte a nuestros canales de
+          comunicación (WhatsApp, LinkedIn, Meetup).
+        </p>
+        <h3>Uso de la Información</h3>
+        <p>
+          La información compartida en nuestros grupos se utiliza únicamente para fines
+          organizativos y de comunicación interna del grupo.
+        </p>
+        <h3>Cookies</h3>
+        <p>Este sitio web no utiliza cookies de rastreo ni sistemas de análisis de terceros.</p>
+        <h3>Enlaces a Terceros</h3>
+        <p>
+          Este sitio contiene enlaces a plataformas externas (WhatsApp, LinkedIn, GitHub, Meetup).
+          No nos responsabilizamos por las prácticas de privacidad de dichas plataformas.
+        </p>
+        <h3>Contacto</h3>
+        <p>
+          Si tienes preguntas sobre esta política, puedes contactarnos a través de los canales
+          oficiales del grupo.
+        </p>
+      </div>
     </div>
-  </footer>
 
-  <!-- MODALS -->
-  <!-- Información Legal -->
-  <div class="modal-overlay" id="modal-legal">
-    <div class="modal-content">
-      <button class="modal-close" data-close="legal">&times;</button>
-      <h2>Información Legal</h2>
-      <p><strong>AWS Student Builder Group - Antonio Varas</strong> es un grupo de estudiantes independiente, afiliado al programa AWS Student Builder Group de Amazon Web Services.</p>
-      <h3>Propósito</h3>
-      <p>Este sitio web y el grupo tienen fines educativos y comunitarios. No representan oficialmente a Amazon Web Services ni a Duoc UC.</p>
-      <h3>Uso del Contenido</h3>
-      <p>El material presentado en este sitio, incluyendo código fuente, documentación y recursos educativos, se comparte bajo principios de open source para fomentar el aprendizaje colaborativo.</p>
-      <h3>Exención de Responsabilidad</h3>
-      <p>El grupo no se hace responsable por el uso indebido de la información aquí proporcionada. Los miembros participan de forma voluntaria y bajo su propia responsabilidad.</p>
-      <h3>Propiedad Intelectual</h3>
-      <p>Las marcas y logotipos de AWS son propiedad de Amazon Web Services. El resto del contenido original es propiedad del grupo a menos que se indique lo contrario.</p>
+    <!-- Código de Conducta -->
+    <div class="modal-overlay" id="modal-conduct">
+      <div class="modal-content">
+        <button class="modal-close" data-close="conduct">&times;</button>
+        <h2>Código de Conducta</h2>
+        <p>
+          Nos comprometemos a mantener un ambiente respetuoso, inclusivo y libre de acoso para todos
+          los miembros de nuestra comunidad.
+        </p>
+        <h3>Comportamiento Esperado</h3>
+        <ul>
+          <li>Tratar a todos los miembros con respeto y dignidad.</li>
+          <li>Fomentar un ambiente colaborativo y de apoyo mutuo.</li>
+          <li>Aceptar críticas constructivas y feedback profesional.</li>
+          <li>Respetar los tiempos y espacios de los demás miembros.</li>
+          <li>Mantener la confidencialidad de información sensible del grupo.</li>
+        </ul>
+        <h3>Comportamiento Inaceptable</h3>
+        <ul>
+          <li>Acoso, discriminación o comentarios ofensivos de cualquier naturaleza.</li>
+          <li>Spam, publicidad no solicitada o promoción de servicios externos.</li>
+          <li>Compartir información confidencial sin autorización.</li>
+          <li>Cualquier forma de intimidación o violencia.</li>
+        </ul>
+        <h3>Reporte de Incidentes</h3>
+        <p>
+          Si presencias o experimentas alguna violación a este código, repórtalo a los líderes del
+          grupo a través de los canales internos. Todos los reportes serán tratados de forma
+          confidencial.
+        </p>
+        <h3>Consecuencias</h3>
+        <p>
+          El incumplimiento de este código puede resultar en amonestaciones, suspensión temporal o
+          expulsión definitiva del grupo, según la gravedad de la falta.
+        </p>
+      </div>
     </div>
-  </div>
 
-  <!-- Política de Privacidad -->
-  <div class="modal-overlay" id="modal-privacy">
-    <div class="modal-content">
-      <button class="modal-close" data-close="privacy">&times;</button>
-      <h2>Política de Privacidad</h2>
-      <p>En AWS Student Builder Group - Antonio Varas, valoramos tu privacidad y nos comprometemos a proteger tus datos personales.</p>
-      <h3>Información que Recopilamos</h3>
-      <p>No recopilamos datos personales a través de este sitio web. La única información que podemos conocer es aquella que compartes voluntariamente al unirte a nuestros canales de comunicación (WhatsApp, LinkedIn, Meetup).</p>
-      <h3>Uso de la Información</h3>
-      <p>La información compartida en nuestros grupos se utiliza únicamente para fines organizativos y de comunicación interna del grupo.</p>
-      <h3>Cookies</h3>
-      <p>Este sitio web no utiliza cookies de rastreo ni sistemas de análisis de terceros.</p>
-      <h3>Enlaces a Terceros</h3>
-      <p>Este sitio contiene enlaces a plataformas externas (WhatsApp, LinkedIn, GitHub, Meetup). No nos responsabilizamos por las prácticas de privacidad de dichas plataformas.</p>
-      <h3>Contacto</h3>
-      <p>Si tienes preguntas sobre esta política, puedes contactarnos a través de los canales oficiales del grupo.</p>
+    <!-- Contacto Interno -->
+    <div class="modal-overlay" id="modal-contact">
+      <div class="modal-content">
+        <button class="modal-close" data-close="contact">&times;</button>
+        <h2>Contacto Interno</h2>
+        <p>
+          Puedes contactar al equipo de AWS Student Builder Group - Antonio Varas a través de los
+          siguientes canales:
+        </p>
+        <h3>Correo Electrónico</h3>
+        <p>
+          <a href="mailto:aws-sbg.avaras@duoc.cl" style="color: var(--aws-blue)"
+            >aws-sbg.avaras@duoc.cl</a
+          >
+        </p>
+        <h3>WhatsApp</h3>
+        <p>
+          Únete a nuestra comunidad oficial:<br />
+          <a
+            href="https://chat.whatsapp.com/EZbJ86mQNEhDEFB1HoELn8"
+            target="_blank"
+            style="color: var(--aws-mint)"
+            >Comunidad WhatsApp SBG</a
+          >
+        </p>
+        <h3>LinkedIn</h3>
+        <p>
+          Síguenos en nuestra página oficial:<br />
+          <a
+            href="https://www.linkedin.com/company/aws-sbg-duoc-avaras/"
+            target="_blank"
+            style="color: var(--aws-blue)"
+            >LinkedIn AWS SBG Antonio Varas</a
+          >
+        </p>
+        <h3>GitHub</h3>
+        <p>
+          Explora nuestros proyectos open source:<br />
+          <a
+            href="https://github.com/AWS-SBG-AntonioVaras"
+            target="_blank"
+            style="color: var(--text-light)"
+            >github.com/AWS-SBG-AntonioVaras</a
+          >
+        </p>
+      </div>
     </div>
-  </div>
 
-  <!-- Código de Conducta -->
-  <div class="modal-overlay" id="modal-conduct">
-    <div class="modal-content">
-      <button class="modal-close" data-close="conduct">&times;</button>
-      <h2>Código de Conducta</h2>
-      <p>Nos comprometemos a mantener un ambiente respetuoso, inclusivo y libre de acoso para todos los miembros de nuestra comunidad.</p>
-      <h3>Comportamiento Esperado</h3>
-      <ul>
-        <li>Tratar a todos los miembros con respeto y dignidad.</li>
-        <li>Fomentar un ambiente colaborativo y de apoyo mutuo.</li>
-        <li>Aceptar críticas constructivas y feedback profesional.</li>
-        <li>Respetar los tiempos y espacios de los demás miembros.</li>
-        <li>Mantener la confidencialidad de información sensible del grupo.</li>
-      </ul>
-      <h3>Comportamiento Inaceptable</h3>
-      <ul>
-        <li>Acoso, discriminación o comentarios ofensivos de cualquier naturaleza.</li>
-        <li>Spam, publicidad no solicitada o promoción de servicios externos.</li>
-        <li>Compartir información confidencial sin autorización.</li>
-        <li>Cualquier forma de intimidación o violencia.</li>
-      </ul>
-      <h3>Reporte de Incidentes</h3>
-      <p>Si presencias o experimentas alguna violación a este código, repórtalo a los líderes del grupo a través de los canales internos. Todos los reportes serán tratados de forma confidencial.</p>
-      <h3>Consecuencias</h3>
-      <p>El incumplimiento de este código puede resultar en amonestaciones, suspensión temporal o expulsión definitiva del grupo, según la gravedad de la falta.</p>
-    </div>
-  </div>
-
-  <!-- Contacto Interno -->
-  <div class="modal-overlay" id="modal-contact">
-    <div class="modal-content">
-      <button class="modal-close" data-close="contact">&times;</button>
-      <h2>Contacto Interno</h2>
-      <p>Puedes contactar al equipo de AWS Student Builder Group - Antonio Varas a través de los siguientes canales:</p>
-      <h3>Correo Electrónico</h3>
-      <p><a href="mailto:aws-sbg.avaras@duoc.cl" style="color: var(--aws-blue);">aws-sbg.avaras@duoc.cl</a></p>
-      <h3>WhatsApp</h3>
-      <p>Únete a nuestra comunidad oficial:<br>
-      <a href="https://chat.whatsapp.com/EZbJ86mQNEhDEFB1HoELn8" target="_blank" style="color: var(--aws-mint);">Comunidad WhatsApp SBG</a></p>
-      <h3>LinkedIn</h3>
-      <p>Síguenos en nuestra página oficial:<br>
-      <a href="https://www.linkedin.com/company/aws-sbg-duoc-avaras/" target="_blank" style="color: var(--aws-blue);">LinkedIn AWS SBG Antonio Varas</a></p>
-      <h3>GitHub</h3>
-      <p>Explora nuestros proyectos open source:<br>
-      <a href="https://github.com/AWS-SBG-AntonioVaras" target="_blank" style="color: var(--text-light);">github.com/AWS-SBG-AntonioVaras</a></p>
-    </div>
-  </div>
-
-  <script type="module" src="./main.js"></script>
-</body>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>

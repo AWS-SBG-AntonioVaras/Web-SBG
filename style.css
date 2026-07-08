@@ -1227,3 +1227,15 @@ footer {
     margin-bottom: 8px !important;
   }
 }
+
+#terminal-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  #terminal-input::placeholder {
+    font-size: 0.75rem;
+  }
+}

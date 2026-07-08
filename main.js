@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (window.innerWidth <= 768 || 'ontouchstart' in window) {
         terminalInput.readOnly = true;
-        terminalInput.placeholder = 'Terminal read-only en móviles';
+        terminalInput.placeholder = 'Sólo lectura en móvil';
         terminalInput.blur();
       } else {
         terminalInput.focus();

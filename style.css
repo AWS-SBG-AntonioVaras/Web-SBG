@@ -1063,3 +1063,82 @@ footer {
     opacity: 0;
   }
 }
+
+/* =========================================
+   RESPONSIVE IMPROVEMENTS (Mobile First)
+   ========================================= */
+
+@media (max-width: 900px) {
+  /* Leaders Responsive Fixes */
+  .leader-img-large {
+    width: 200px !important;
+    height: 200px !important;
+    margin: 30px 0 0 0 !important;
+  }
+  .leader-card-heroic.reverse .leader-img-large {
+    margin: 30px 0 0 0 !important;
+  }
+  .leader-info {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Terminal Responsive Fixes */
+  .terminal-window {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 70vh !important;
+    min-height: 400px !important;
+    max-height: 800px !important;
+    box-shadow: 6px 6px 0px var(--aws-purple) !important;
+  }
+
+  .terminal-body {
+    padding: 15px !important;
+    font-size: 0.95rem !important;
+    height: auto !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+  }
+
+  /* Parallax Fix (Prevent horizontal scrolling/clutter) */
+  .parallax-shapes {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Leaders Extra Small */
+  .leader-img-large {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 20px 0 0 0 !important;
+  }
+
+  .leader-info h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .leader-info p {
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Terminal Extra Small */
+  .terminal-window {
+    height: 80vh !important;
+    box-shadow: 4px 4px 0px var(--aws-purple) !important;
+  }
+
+  .terminal-body {
+    padding: 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Buttons and Paddings */
+  .neo-btn {
+    padding: 10px 14px !important;
+    font-size: 0.75rem !important;
+  }
+}

@@ -6,11 +6,11 @@ Como miembros de la comunidad AWS Student Builder Group, nos comprometemos a hac
 
 Ejemplos de comportamiento que contribuyen a crear un ambiente positivo incluyen:
 
-* El uso de lenguaje amable e inclusivo
-* El respeto a los diferentes puntos de vista y experiencias
-* Aceptar críticas constructivas con gracia
-* Centrarse en lo que es mejor para la comunidad
-* Mostrar empatía hacia otros miembros de la comunidad
+- El uso de lenguaje amable e inclusivo
+- El respeto a los diferentes puntos de vista y experiencias
+- Aceptar críticas constructivas con gracia
+- Centrarse en lo que es mejor para la comunidad
+- Mostrar empatía hacia otros miembros de la comunidad
 
 ## Aplicación
 

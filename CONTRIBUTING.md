@@ -1,6 +1,6 @@
 # Guía de Contribución 🤝
 
-¡Gracias por tu interés en contribuir al sitio web de **AWS Student Builder Group - Antonio Varas**! 
+¡Gracias por tu interés en contribuir al sitio web de **AWS Student Builder Group - Antonio Varas**!
 
 Como somos una comunidad de estudiantes, valoramos cualquier tipo de aporte, desde arreglar un pequeño error tipográfico hasta crear componentes nuevos enteros.
 

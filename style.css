@@ -1184,3 +1184,45 @@ footer {
     font-size: 0.7rem;
   }
 }
+
+/* Footer Compression & Text Fitting */
+footer {
+  padding: 20px 0 !important;
+}
+
+.footer-links {
+  gap: 15px !important;
+  margin-bottom: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .footer-links a {
+    font-size: 0.75rem !important;
+    text-align: center;
+  }
+
+  /* Fix Modal Internal Text Accommodations */
+  .modal-content {
+    padding: 20px !important;
+  }
+  .modal-content h2 {
+    font-size: 1.2rem !important;
+    margin-bottom: 15px !important;
+  }
+  .modal-content h3 {
+    font-size: 1rem !important;
+    margin: 10px 0 5px !important;
+  }
+  .modal-content p,
+  .modal-content li {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+  }
+}

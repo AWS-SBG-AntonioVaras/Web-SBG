@@ -266,7 +266,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (interactiveSection && interactivePrompt && terminalInput) {
       interactivePrompt.innerHTML = getPromptHTML();
       interactiveSection.style.display = 'flex';
-      terminalInput.focus();
+
+      if (window.innerWidth <= 768 || 'ontouchstart' in window) {
+        terminalInput.readOnly = true;
+        terminalInput.placeholder = 'Terminal read-only en móviles';
+        terminalInput.blur();
+      } else {
+        terminalInput.focus();
+      }
 
       if (terminalInput.hasAttribute('data-listeners-attached')) return; // No attach duplicate events
       terminalInput.setAttribute('data-listeners-attached', 'true');
@@ -332,7 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (terminalBody) {
         terminalBody.addEventListener('click', () => {
           if (window.getSelection().toString() === '') {
-            terminalInput.focus();
+            if (!(window.innerWidth <= 768 || 'ontouchstart' in window)) {
+              terminalInput.focus();
+            }
           }
         });
       }

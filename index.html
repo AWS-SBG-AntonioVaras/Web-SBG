@@ -76,17 +76,9 @@
           class="hero-banner"
         />
         <h1>
-          AWS<br /><span style="white-space: nowrap">Student Builder Group</span><br />Antonio Varas
+          AWS<br /><span class="hero-title-nowrap">Student Builder Group</span><br />Antonio Varas
         </h1>
-        <p
-          style="
-            margin: 0 auto 40px auto;
-            border-bottom: 4px solid var(--aws-blue);
-            padding: 20px 60px;
-            max-width: 800px;
-            display: inline-block;
-          "
-        >
+        <p class="hero-description">
           Bienvenid@ a nuestro espacio oficial de AWS en Antonio Varas, donde podras aprender y
           profundizar en la Nube con alumnos seleccionados de AWS.
         </p>
@@ -113,21 +105,9 @@
     <!-- LEADERS SECTION -->
     <section id="leaders" class="layer-section solid-bg" style="z-index: 2">
       <div class="container">
-        <h2
-          class="pixel-font"
-          style="
-            font-size: 3rem;
-            margin-bottom: 50px;
-            color: var(--text-light);
-            text-shadow: 4px 4px 0px var(--aws-purple);
-          "
-        >
-          Nuestro Equipo
-        </h2>
+        <h2 class="pixel-font leaders-title" style="text-align: center">Nuestro Equipo</h2>
 
-        <div
-          class="carousel-wrapper"
-        >
+        <div class="carousel-wrapper">
           <button class="carousel-btn" id="prevLeaderBtn" aria-label="Líder anterior">&lt;</button>
 
           <div class="leaders-section" id="leadersCarousel">
@@ -417,25 +397,88 @@
           </h2>
 
           <div class="events-list">
-            <a href="#" class="activity-item" style="opacity: 0.5; cursor: not-allowed">
+            <a
+              href="https://meetu.ps/e/Q98r4/1dCYWG/i"
+              target="_blank"
+              class="activity-item featured-event"
+              style="border-left: 3px solid var(--aws-mint)"
+            >
               <div
                 style="
                   display: flex;
-                  justify-content: space-between;
-                  width: 100%;
-                  align-items: flex-start;
-                  gap: 10px;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 6px;
                 "
               >
-                <strong style="color: var(--text-light); font-size: 1.1rem; line-height: 1.2"
-                  >[ SIN EVENTOS ACTIVOS ]</strong
+                <strong style="color: var(--text-light); font-size: 1.15rem; line-height: 1.3"
+                  >Introducción a AWS: Primeros Pasos en la Nube</strong
                 >
-                <span class="badge badge-cloud">General</span>
+                <span class="badge badge-dev">Cloud</span>
               </div>
-              <span style="color: var(--aws-mint); font-size: 0.9rem">Próximamente</span>
-              <span style="font-size: 0.9rem; color: #a1aab5"
-                >El equipo está preparando nuevas actividades. Mantente alerta.</span
+              <span
+                style="
+                  color: var(--aws-orange);
+                  font-size: 0.9rem;
+                  display: block;
+                  margin-top: 8px;
+                  font-weight: bold;
+                "
+                >Miércoles 23 de julio · 20:00 hrs (Chile) · 100% online y gratuito</span
               >
+
+              <p
+                style="
+                  font-size: 0.9rem;
+                  color: #a1aab5;
+                  margin-top: 12px;
+                  margin-bottom: 12px;
+                  line-height: 1.5;
+                "
+              >
+                ¿Te gustaría entender qué es AWS y por qué la nube se ha vuelto una habilidad tan
+                importante en tecnología? Si estás dando tus primeros pasos en cloud computing, este
+                evento es para ti. Aprenderemos los fundamentos de AWS desde cero: qué es la nube,
+                cómo funciona, cuáles son sus principales servicios y cómo comenzar tu camino en el
+                ecosistema AWS.
+              </p>
+
+              <div
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-light);
+                  margin-bottom: 12px;
+                  margin-top: 4px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+              >
+                <strong style="color: var(--aws-mint); margin-bottom: 5px; display: inline-block"
+                  >🎙️ Expositores</strong
+                >
+                <ul style="margin: 0; color: #a1aab5">
+                  <li style="margin-bottom: 4px">Gaston Ignacio Mardones Gonzalez</li>
+                  <li style="margin-bottom: 4px">Alonso Mieres</li>
+                </ul>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 4px;
+                  font-size: 0.85rem;
+                  color: var(--aws-mint);
+                  background: rgba(39, 201, 63, 0.05);
+                  padding: 10px;
+                  border-radius: 6px;
+                "
+              >
+                <span>🚀 No necesitas experiencia previa, solo ganas de aprender</span>
+                <span>💻 100% online y gratuito</span>
+              </div>
             </a>
           </div>
         </div>
@@ -459,9 +502,8 @@
               <div
                 style="
                   display: flex;
-                  justify-content: space-between;
-                  width: 100%;
-                  align-items: flex-start;
+                  justify-content: center;
+                  align-items: center;
                   gap: 10px;
                   flex-wrap: wrap;
                 "
@@ -503,11 +545,20 @@
                 parar? El problema no es el prompt — es que le falta el <strong>harness</strong>.
               </p>
 
-              <div style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px">
+              <div
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-light);
+                  margin-bottom: 12px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+              >
                 <strong style="color: var(--aws-blue); margin-bottom: 5px; display: inline-block"
                   >🧠 ¿Qué vas a aprender?</strong
                 >
-                <ul style="margin: 0; padding-left: 15px; color: #a1aab5">
+                <ul style="margin: 0; color: #a1aab5">
                   <li style="margin-bottom: 4px">
                     Qué es el harness y por qué tu agente lo necesita
                   </li>
@@ -525,6 +576,7 @@
                 style="
                   display: flex;
                   flex-direction: column;
+                  align-items: center;
                   gap: 4px;
                   font-size: 0.85rem;
                   color: var(--aws-mint);
@@ -643,9 +695,7 @@
             <div class="terminal-dot dot-red" id="btn-close-terminal" style="cursor: pointer"></div>
           </div>
           <div class="terminal-body">
-            <h2 class="pixel-font" style="margin-bottom: 10px; font-size: 2rem">
-              > Info_Sistema --sobre SBG
-            </h2>
+            <h2 class="pixel-font terminal-title">> Info_Sistema --sobre SBG</h2>
             <div class="terminal-content">
               <!-- El texto se inyectará aquí vía JS para la animación -->
               <p

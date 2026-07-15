@@ -363,7 +363,7 @@ section {
 
 /* --- Hero Section --- */
 .hero {
-  text-align: left; /* Más asimétrico/tech */
+  text-align: center; /* Centrado */
   min-height: 100vh;
 }
 
@@ -381,6 +381,8 @@ section {
   text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
   position: relative;
   display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero p {
@@ -622,8 +624,8 @@ section {
   }
   .activity-item {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
   .activity-item img {
     width: 32px;
@@ -898,19 +900,6 @@ section {
   white-space: pre-wrap;
 }
 
-@media (max-width: 768px) {
-  .terminal-window {
-    height: 850px !important;
-    min-height: 850px !important;
-    max-height: 850px !important;
-  }
-  .terminal-body {
-    height: 790px !important;
-    min-height: 790px !important;
-    max-height: 790px !important;
-  }
-}
-
 /* Cursor de Terminal Animado */
 .typing-cursor::after {
   content: '█';
@@ -964,7 +953,8 @@ footer {
 .activity-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 8px;
   padding: 15px;
   border: 2px solid var(--border-color);
@@ -973,10 +963,46 @@ footer {
   -webkit-backdrop-filter: blur(8px);
   transition: all 0.2s;
   text-decoration: none;
+  height: 480px;
+  overflow-y: auto;
+}
+
+.activity-item ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.activity-item ul li {
+  text-align: center;
 }
 .activity-item:hover {
   background: rgba(0, 229, 130, 0.1);
   border-color: var(--aws-mint);
+}
+
+.featured-event {
+  animation: borderCycle 8s steps(1) infinite;
+}
+
+@keyframes borderCycle {
+  0% {
+    border-color: var(--aws-mint);
+  }
+  20% {
+    border-color: var(--aws-orange);
+  }
+  40% {
+    border-color: var(--aws-blue);
+  }
+  60% {
+    border-color: var(--aws-purple);
+  }
+  80% {
+    border-color: var(--aws-magenta);
+  }
+  100% {
+    border-color: var(--aws-mint);
+  }
 }
 .badge {
   font-size: 0.7rem;
@@ -1084,23 +1110,27 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Terminal Responsive Fixes */
   .terminal-window {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(100vw - 40px) !important;
+    max-width: calc(100vw - 40px) !important;
     height: 70vh !important;
-    min-height: 400px !important;
-    max-height: 800px !important;
-    box-shadow: 6px 6px 0px var(--aws-purple) !important;
+    min-height: 450px !important;
+    max-height: 750px !important;
+    box-shadow: 8px 8px 0px var(--aws-purple) !important;
   }
 
   .terminal-body {
-    padding: 15px !important;
+    padding: 20px !important;
     font-size: 0.95rem !important;
     height: auto !important;
     flex: 1 !important;
     overflow-y: auto !important;
+  }
+
+  .terminal-title {
+    font-size: 1.8rem !important;
   }
 
   /* Parallax Fix (Prevent horizontal scrolling/clutter) */
@@ -1128,6 +1158,8 @@ footer {
 
   /* Terminal Extra Small */
   .terminal-window {
+    width: calc(100vw - 30px) !important;
+    max-width: calc(100vw - 30px) !important;
     height: 80vh !important;
     box-shadow: 4px 4px 0px var(--aws-purple) !important;
   }
@@ -1147,42 +1179,44 @@ footer {
 /* Quadrant Socials */
 .socials-quadrant {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  max-width: 500px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  aspect-ratio: 4 / 3;
+  box-sizing: border-box;
 }
 
 .socials-quadrant .neo-btn {
   width: 100%;
-  height: 100%;
-  padding: 0;
+  padding: 15px 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  gap: 10px;
+  gap: 8px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .socials-quadrant .neo-btn svg {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
 }
 
 @media (max-width: 480px) {
   .socials-quadrant {
-    gap: 10px;
+    gap: 8px;
   }
   .socials-quadrant .neo-btn svg {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
   }
   .socials-quadrant .neo-btn {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+    padding: 10px 2px;
+    gap: 5px;
   }
 }
 
@@ -1314,15 +1348,9 @@ footer {
   }
 }
 
-
 /* =========================================
    FUNDAMENTAL REWRITE: TEAM CARDS
    ========================================= */
-
-#leaders .container {
-  max-width: 100%;
-  padding: 0 15px;
-}
 
 .carousel-wrapper {
   position: relative !important;
@@ -1352,92 +1380,100 @@ footer {
   display: none !important;
 }
 
-/* Fundamental Card Structure */
-.leader-card-heroic,
-.leader-card-heroic.reverse {
-  flex: 0 0 85% !important; /* Peeks the next card to invite swiping */
-  scroll-snap-stop: always !important;
-  display: flex !important;
-  flex-direction: column !important; /* IMAGEN ARRIBA, TEXTO MEDIO, BOTONES ABAJO */
-  background-color: rgba(26, 34, 45, 0.95) !important;
-  border: 4px solid var(--border-color) !important;
-  scroll-snap-align: center !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  height: auto !important;
-  border-radius: 8px !important;
-  padding: 0;
+/* =========================================
+   MOBILE & TABLET CARDS LAYOUT (<= 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  /* En responsivo, forzar contenedor al 100% de la pantalla */
+  #leaders .container {
+    max-width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  /* Fundamental Card Structure */
+  .leader-card-heroic,
+  .leader-card-heroic.reverse {
+    flex: 0 0 100% !important; /* Full width on tablet by default */
+    scroll-snap-stop: always !important;
+    display: flex !important;
+    flex-direction: column !important; /* IMAGEN ARRIBA, TEXTO MEDIO, BOTONES ABAJO */
+    background-color: rgba(26, 34, 45, 0.95) !important;
+    border: 4px solid var(--border-color) !important;
+    scroll-snap-align: center !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    padding: 0;
+  }
+
+  /* Image on top */
+  .leader-card-heroic .leader-img-large,
+  .leader-card-heroic.reverse .leader-img-large {
+    width: 100% !important;
+    height: 300px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-bottom: 4px solid var(--border-color) !important;
+    border-radius: 4px 4px 0 0 !important;
+    object-fit: cover;
+    box-sizing: border-box !important;
+  }
+
+  /* Text in the middle */
+  .leader-card-heroic .leader-info {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 25px !important;
+    flex-grow: 1 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .leader-card-heroic .leader-info h3 {
+    font-size: 1.8rem !important;
+    margin-bottom: 5px !important;
+  }
+
+  .leader-card-heroic .leader-info .role {
+    font-size: 1rem !important;
+    margin-bottom: 15px !important;
+    color: var(--aws-magenta) !important;
+  }
+
+  .leader-card-heroic .leader-info p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    text-align: justify !important;
+    text-align-last: center !important;
+  }
+
+  /* Buttons at the bottom */
+  .leader-socials {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: auto !important;
+    width: 100% !important;
+  }
+
+  .leader-socials .neo-btn {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    padding: 10px 15px !important;
+  }
+
+  /* Carousel Buttons */
+  .carousel-btn {
+    display: none !important; /* Hide them on mobile by default to save space */
+  }
 }
 
-/* Image on top */
-.leader-card-heroic .leader-img-large,
-.leader-card-heroic.reverse .leader-img-large {
-  width: 100% !important;
-  height: 300px !important; /* Fija la altura para que no deforme la tarjeta */
-  margin: 0 !important;
-  border: none !important;
-  border-bottom: 4px solid var(--border-color) !important;
-  border-radius: 4px 4px 0 0 !important;
-  object-fit: cover;
-  box-sizing: border-box !important;
-}
-
-/* Text in the middle */
-.leader-card-heroic .leader-info {
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 25px !important;
-  flex-grow: 1 !important;
-  text-align: center !important;
-  box-sizing: border-box !important;
-}
-
-.leader-card-heroic .leader-info h3 {
-  font-size: 1.8rem !important;
-  margin-bottom: 5px !important;
-}
-
-.leader-card-heroic .leader-info .role {
-  font-size: 1rem !important;
-  margin-bottom: 15px !important;
-  color: var(--aws-magenta) !important;
-}
-
-.leader-card-heroic .leader-info p {
-  font-size: 1rem !important;
-  line-height: 1.6 !important;
-  margin-bottom: 20px !important;
-  text-align: justify !important;
-  text-align-last: center !important; /* Se ve ordenado */
-}
-
-/* Buttons at the bottom */
-.leader-socials {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 10px !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-top: auto !important; /* Empuja los botones abajo */
-  width: 100% !important;
-}
-
-.leader-socials .neo-btn {
-  margin: 0 !important;
-  font-size: 0.9rem !important;
-  padding: 10px 15px !important;
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-  display: none !important; /* Hide them on mobile by default to save space */
-}
-
-/* Desktop layout overriding to side-by-side if preferred, 
-   but user asked for image top, text middle, buttons bottom. 
-   Let's keep it column but make cards smaller on desktop so 2 or 3 fit. */
-
-@media (min-width: 768px) {
+/* Tablet carousel buttons override */
+@media (min-width: 481px) and (max-width: 900px) {
   .carousel-btn {
     display: flex !important;
     position: absolute !important;
@@ -1447,33 +1483,242 @@ footer {
     background: var(--aws-purple) !important;
     color: white !important;
   }
-  #prevLeaderBtn { left: -20px !important; }
-  #nextLeaderBtn { right: -20px !important; }
-
-  /* In Desktop, let's make the cards take 50% width */
-  .leader-card-heroic,
-  .leader-card-heroic.reverse {
-    flex: 0 0 calc(50% - 10px) !important;
+  #prevLeaderBtn {
+    left: -10px !important;
   }
-  
-  /* Keep Image top, text middle, buttons bottom */
-  .leader-card-heroic .leader-img-large,
-  .leader-card-heroic.reverse .leader-img-large {
-    height: 350px !important;
+  #nextLeaderBtn {
+    right: -10px !important;
   }
 }
 
-@media (min-width: 1200px) {
-  /* In Large Desktop, 3 cards */
-  .leader-card-heroic,
+/* =========================================
+   DESKTOP LAYOUT (> 900px)
+   ========================================= */
+@media (min-width: 901px) {
+  /* Add lateral padding to carousel wrapper to make room for arrows */
+  .carousel-wrapper {
+    padding: 0 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Restore horizontal cards on desktop */
+  .leader-card-heroic {
+    flex: 0 0 calc(100% - 20px) !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    margin: 10px !important;
+    height: auto !important;
+    border-radius: 0px !important;
+  }
+
   .leader-card-heroic.reverse {
-    flex: 0 0 calc(33.333% - 14px) !important;
+    flex: 0 0 calc(100% - 20px) !important;
+    flex-direction: row-reverse !important;
+    align-items: center !important;
+    text-align: left !important;
+    margin: 10px !important;
+    height: auto !important;
+    border-radius: 0px !important;
+  }
+
+  /* Restore original image size (increased to 300px for better vertical/horizontal presence) */
+  .leader-card-heroic .leader-img-large {
+    width: 300px !important;
+    height: 300px !important;
+    margin: 30px 0 30px 30px !important;
+    border: 4px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    object-fit: cover !important;
+  }
+
+  .leader-card-heroic.reverse .leader-img-large {
+    width: 300px !important;
+    height: 300px !important;
+    margin: 30px 30px 30px 0 !important;
+    border: 4px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    object-fit: cover !important;
+  }
+
+  /* Restore text alignment and padding */
+  .leader-card-heroic .leader-info {
+    padding: 40px !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .leader-card-heroic .leader-info p {
+    text-align: left !important;
+    font-size: 1.15rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .leader-card-heroic .leader-info h3 {
+    font-size: 2rem !important;
+  }
+
+  /* Socials layout on desktop */
+  .leader-socials {
+    justify-content: flex-start !important;
+    margin-top: 10px !important;
+  }
+
+  /* Display carousel navigation buttons on desktop with original styles */
+  .carousel-btn {
+    display: flex !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+  }
+  #prevLeaderBtn {
+    left: 5px !important;
+  }
+  #nextLeaderBtn {
+    right: 5px !important;
+  }
+
+  /* Restore horizontal socials on desktop */
+  .socials-quadrant {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    max-width: 100% !important;
+    aspect-ratio: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .socials-quadrant .neo-btn {
+    width: auto !important;
+    height: auto !important;
+    padding: 15px 25px !important;
+    font-size: 1.1rem !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .socials-quadrant .neo-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .hero-title-nowrap {
+    white-space: nowrap !important;
   }
 }
 
 /* Fix shadow colors using existing classes */
-.shadow-orange { box-shadow: 6px 6px 0px var(--aws-orange) !important; }
-.shadow-magenta { box-shadow: 6px 6px 0px var(--aws-magenta) !important; }
-.shadow-blue { box-shadow: 6px 6px 0px var(--aws-blue) !important; }
-.shadow-purple { box-shadow: 6px 6px 0px var(--aws-purple) !important; }
-.shadow-mint { box-shadow: 6px 6px 0px var(--aws-mint) !important; }
+.shadow-orange {
+  box-shadow: 6px 6px 0px var(--aws-orange) !important;
+}
+.shadow-magenta {
+  box-shadow: 6px 6px 0px var(--aws-magenta) !important;
+}
+.shadow-blue {
+  box-shadow: 6px 6px 0px var(--aws-blue) !important;
+}
+.shadow-purple {
+  box-shadow: 6px 6px 0px var(--aws-purple) !important;
+}
+.shadow-mint {
+  box-shadow: 6px 6px 0px var(--aws-mint) !important;
+}
+
+/* =========================================
+   ADDITIONAL RESPONSIVE CLASSES & OVERRIDES
+   ========================================= */
+
+/* Hero Description Class */
+.hero-description {
+  margin: 0 auto 40px auto;
+  border-bottom: 4px solid var(--aws-blue);
+  padding: 20px 60px;
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Hero Title Wrapping */
+.hero-title-nowrap {
+  white-space: normal; /* Envolver por defecto en pantallas pequeñas */
+}
+
+/* Leaders Section Title */
+.leaders-title {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: var(--text-light);
+  text-shadow: 4px 4px 0px var(--aws-purple);
+}
+
+/* Terminal Section Title */
+.terminal-title {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+/* Prevent flex layout inside terminal lines from stretching the window */
+.typing-line {
+  flex-wrap: wrap !important;
+}
+
+/* Modal Content Header Spacing to prevent close button collision */
+.modal-content h2 {
+  padding-right: 40px;
+}
+
+/* Media Queries for new classes */
+@media (max-width: 768px) {
+  .hero-description {
+    padding: 15px 30px !important;
+    font-size: 1.1rem !important;
+    max-width: 90% !important; /* Respiro lateral */
+  }
+  .leaders-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 30px !important;
+    text-shadow: 3px 3px 0px var(--aws-purple) !important;
+  }
+  .terminal-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-description {
+    padding: 12px 15px !important;
+    font-size: 0.9rem !important;
+    max-width: 95% !important;
+  }
+  .hero-title-nowrap {
+    white-space: normal !important;
+  }
+  .leaders-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 20px !important;
+    text-shadow: 2px 2px 0px var(--aws-purple) !important;
+  }
+  .terminal-title {
+    font-size: 1.1rem !important;
+  }
+  /* Ensure leader image is not overly tall on small devices */
+  .leader-card-heroic .leader-img-large,
+  .leader-card-heroic.reverse .leader-img-large {
+    height: 220px !important;
+  }
+  /* Mobile card width override to peek next card */
+  .leader-card-heroic,
+  .leader-card-heroic.reverse {
+    flex: 0 0 85% !important;
+    margin: 0 10px !important;
+  }
+}

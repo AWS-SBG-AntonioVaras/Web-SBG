@@ -1446,8 +1446,7 @@ footer {
     font-size: 1rem !important;
     line-height: 1.6 !important;
     margin-bottom: 20px !important;
-    text-align: justify !important;
-    text-align-last: center !important;
+    text-align: center !important;
   }
 
   /* Buttons at the bottom */

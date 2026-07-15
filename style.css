@@ -1205,18 +1205,19 @@ footer {
   height: 32px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .socials-quadrant {
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   .socials-quadrant .neo-btn svg {
     width: 24px;
     height: 24px;
   }
   .socials-quadrant .neo-btn {
-    font-size: 0.65rem;
-    padding: 10px 2px;
-    gap: 5px;
+    font-size: 0.75rem;
+    padding: 12px 5px;
+    gap: 6px;
   }
 }
 

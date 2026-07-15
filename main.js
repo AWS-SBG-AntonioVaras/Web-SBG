@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (window.innerWidth <= 768 || 'ontouchstart' in window) {
         terminalInput.readOnly = true;
-        terminalInput.placeholder = 'Sólo lectura. Intenta desde escritorio :)';
+        terminalInput.placeholder = 'Sólo lectura. Usa escritorio :)';
         terminalInput.blur();
       } else {
         terminalInput.focus();
@@ -519,15 +519,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (carousel && prevBtn && nextBtn) {
     const cards = Array.from(carousel.children);
     const totalOriginalCards = cards.length;
-    
+
     // Clonamos TODAS las tarjetas al principio y al final para asegurar el scroll infinito visual
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const cloneEnd = card.cloneNode(true);
       carousel.appendChild(cloneEnd);
     });
-    
+
     // Para clonar al principio invertimos el array y hacemos prepend
-    [...cards].reverse().forEach(card => {
+    [...cards].reverse().forEach((card) => {
       const cloneStart = card.cloneNode(true);
       carousel.prepend(cloneStart);
     });
@@ -537,34 +537,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para reposicionar en silencio al usuario dentro de los elementos reales
     const adjustScroll = () => {
       if (cardWidth === 0) {
-        cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+        cardWidth =
+          carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
       }
-      
+
       const scrollPos = carousel.scrollLeft;
       const totalWidth = carousel.scrollWidth;
       const cloneBlockWidth = cardWidth * totalOriginalCards;
-      
+
       // Si scrolleamos hacia la izquierda y llegamos al bloque clonado inicial
       if (scrollPos <= cardWidth * 0.5) {
         carousel.style.scrollBehavior = 'auto'; // Deshabilitar transición suave
         carousel.scrollLeft = scrollPos + cloneBlockWidth; // Saltar a los elementos reales
         // Restaurar suave después de que el navegador aplique el salto
-        setTimeout(() => { carousel.style.scrollBehavior = 'smooth'; }, 50);
-      } 
+        setTimeout(() => {
+          carousel.style.scrollBehavior = 'smooth';
+        }, 50);
+      }
       // Si scrolleamos a la derecha y llegamos al bloque clonado final
-      else if (scrollPos >= totalWidth - cloneBlockWidth - (cardWidth * 0.5)) {
-        carousel.style.scrollBehavior = 'auto'; 
+      else if (scrollPos >= totalWidth - cloneBlockWidth - cardWidth * 0.5) {
+        carousel.style.scrollBehavior = 'auto';
         carousel.scrollLeft = scrollPos - cloneBlockWidth;
-        setTimeout(() => { carousel.style.scrollBehavior = 'smooth'; }, 50);
+        setTimeout(() => {
+          carousel.style.scrollBehavior = 'smooth';
+        }, 50);
       }
     };
 
     // Ajustar scroll inicial para empezar en el primer elemento original (que ahora está en el medio)
     setTimeout(() => {
       carousel.style.scrollBehavior = 'auto';
-      cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
-      carousel.scrollLeft = cardWidth * totalOriginalCards; 
-      setTimeout(() => { carousel.style.scrollBehavior = 'smooth'; }, 50);
+      cardWidth =
+        carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      carousel.scrollLeft = cardWidth * totalOriginalCards;
+      setTimeout(() => {
+        carousel.style.scrollBehavior = 'smooth';
+      }, 50);
     }, 100);
 
     // Escuchar cuando el usuario desliza
@@ -573,13 +581,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const moveToNext = () => {
-      cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      cardWidth =
+        carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
       carousel.style.scrollBehavior = 'smooth';
       carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
     };
 
     const moveToPrev = () => {
-      cardWidth = carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
+      cardWidth =
+        carousel.children[0].offsetWidth + parseInt(window.getComputedStyle(carousel).gap || 20);
       carousel.style.scrollBehavior = 'smooth';
       carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     };
@@ -614,13 +624,25 @@ document.addEventListener('DOMContentLoaded', () => {
       isHovered = false;
       resetAutoPlay();
     });
-    carousel.parentElement.addEventListener('touchstart', () => {
-      isHovered = true;
-      clearInterval(autoPlayInterval);
-    }, { passive: true });
-    carousel.parentElement.addEventListener('touchend', () => {
-      isHovered = false;
-      resetAutoPlay();
-    }, { passive: true });
+    carousel.parentElement.addEventListener(
+      'touchstart',
+      () => {
+        isHovered = true;
+        clearInterval(autoPlayInterval);
+      },
+      { passive: true }
+    );
+    carousel.parentElement.addEventListener(
+      'touchend',
+      () => {
+        isHovered = false;
+        resetAutoPlay();
+      },
+      { passive: true }
+    );
+
+    window.addEventListener('resize', () => {
+      cardWidth = 0;
+    });
   }
 });
